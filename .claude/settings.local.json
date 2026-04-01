@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:kingkong.co)",
+      "WebSearch",
+      "WebFetch(domain:nogood.io)",
+      "Bash(cd \"/c/Users/anasq/Downloads/Web agency\" && npx create-next-app@latest acquisition-media --typescript --tailwind --app --src-dir --no-eslint --import-alias \"@/*\" --yes 2>&1)",
+      "Bash(cd \"/c/Users/anasq/Downloads/Web agency/acquisition-media\" && npm install gsap @gsap/react lenis three @react-three/fiber @react-three/drei clsx tailwind-merge @types/three 2>&1)",
+      "Bash(cd \"/c/Users/anasq/Downloads/Web agency/acquisition-media\" && npm run build 2>&1)",
+      "Bash(cd C:\\\\Users\\\\anasq\\\\Downloads\\\\Web agency\\\\acquisition-media:*)",
+      "Bash(cd \"C:\\\\Users\\\\anasq\\\\Downloads\\\\Web agency\\\\acquisition-media\" && npm run build 2>&1)"
+    ]
+  }
+}
