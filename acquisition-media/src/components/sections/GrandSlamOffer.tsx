@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { openCalendly } from '@/lib/calendly'
+import { SPOTS_REMAINING } from '@/data/spots'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -134,7 +135,7 @@ export default function GrandSlamOffer() {
                 </p>
               </div>
               <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#555555', fontSize: '0.75rem', fontStyle: 'italic', margin: '8px 0 0 0' }}>
-                Founding clients pay significantly less — and that rate is locked in forever.
+                Founding clients pay significantly less than standard market rate — and that rate is locked in for the lifetime of the engagement. Exact investment discussed on the call.
               </p>
             </div>
           </div>
@@ -171,7 +172,7 @@ export default function GrandSlamOffer() {
             {/* Scarcity */}
             <div style={{ background: '#0d0d0d', border: '1px solid #1a1a1a', padding: '32px', textAlign: 'center' }}>
               <p style={{ fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif", fontSize: 'clamp(24px, 3.5vw, 40px)', color: '#e8ff00', lineHeight: 1.05, margin: '0 0 8px 0' }}>
-                4 FOUNDING SPOTS. TOTAL.
+                {SPOTS_REMAINING} OF 4 SPOTS REMAINING.
               </p>
               <p style={{ fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif", fontSize: 'clamp(16px, 2.5vw, 24px)', color: '#f0f0f0', lineHeight: 1.05, margin: '0 0 16px 0' }}>
                 NOT 4 PER MONTH. 4. EVER.
@@ -193,7 +194,7 @@ export default function GrandSlamOffer() {
                 LOCK IN YOUR FOUNDING RATE →
               </button>
               <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#555555', fontSize: '0.75rem', lineHeight: 1.6, margin: 0, fontStyle: 'italic', textAlign: 'center' }}>
-                30-minute call. A custom growth plan for your business. Yours to keep whether you move forward or not.
+                30-minute call. Pricing, timeline, and a full growth plan for your business — all discussed on the call. Yours to keep whether you move forward or not.
               </p>
             </div>
           </div>

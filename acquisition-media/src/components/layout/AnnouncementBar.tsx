@@ -1,7 +1,6 @@
 'use client'
 import { openCalendly } from '@/lib/calendly'
-
-const SPOTS_REMAINING = 4
+import { SPOTS_REMAINING } from '@/data/spots'
 
 export function AnnouncementBar() {
   return (

@@ -6,6 +6,7 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { openCalendly } from '@/lib/calendly'
+import { SPOTS_REMAINING } from '@/data/spots'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -149,7 +150,7 @@ export default function Hero() {
             opacity: 0,
           }}
         >
-          ★ NEW — FOUNDING CLIENT SPOTS OPEN
+          ★ {SPOTS_REMAINING} FOUNDING SPOTS REMAINING
         </div>
 
         {/* Headlines */}

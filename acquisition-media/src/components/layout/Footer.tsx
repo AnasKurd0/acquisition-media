@@ -47,8 +47,8 @@ export function Footer() {
           {/* Contact */}
           <div>
             <h4 className="text-[#f0f0f0] text-xs font-bold tracking-widest mb-4 uppercase">Contact</h4>
-            <a href="mailto:hello@acquisitionmedia.com" className="text-[#555555] text-sm hover:text-[#e8ff00] transition-colors block mb-3">
-              hello@acquisitionmedia.com
+            <a href="mailto:hello@acquisitionmedia.co.uk" className="text-[#555555] text-sm hover:text-[#e8ff00] transition-colors block mb-3">
+              hello@acquisitionmedia.co.uk
             </a>
             <button
               type="button"
@@ -68,8 +68,8 @@ export function Footer() {
             Built with ❤️ using Next.js, Three.js &amp; GSAP
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-[#555555] text-xs hover:text-[#f0f0f0] transition-colors">Privacy Policy</a>
-            <a href="#" className="text-[#555555] text-xs hover:text-[#f0f0f0] transition-colors">Terms of Service</a>
+            <a href="/privacy" className="text-[#555555] text-xs hover:text-[#f0f0f0] transition-colors">Privacy Policy</a>
+            <a href="/terms" className="text-[#555555] text-xs hover:text-[#f0f0f0] transition-colors">Terms of Service</a>
           </div>
         </div>
       </div>

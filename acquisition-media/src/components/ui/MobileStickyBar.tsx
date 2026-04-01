@@ -1,6 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react'
 import { openCalendly } from '@/lib/calendly'
+import { SPOTS_REMAINING } from '@/data/spots'
 
 export function MobileStickyBar() {
   const [visible, setVisible] = useState(false)
@@ -18,7 +19,7 @@ export function MobileStickyBar() {
       transition: 'transform 0.3s ease',
     }}>
       <p style={{ margin: 0, color: '#060606', fontSize: '0.8125rem', fontWeight: 700, letterSpacing: '0.05em', fontFamily: 'var(--font-inter), Inter, sans-serif' }}>
-        4 founding spots remaining
+        {SPOTS_REMAINING} founding spots remaining
       </p>
       <button type="button" onClick={openCalendly} style={{ background: '#060606', color: '#e8ff00', border: 'none', padding: '10px 20px', fontSize: '0.8125rem', fontWeight: 700, letterSpacing: '0.12em', cursor: 'pointer', fontFamily: 'var(--font-inter), Inter, sans-serif', flexShrink: 0 }}>
         BOOK FREE CALL →

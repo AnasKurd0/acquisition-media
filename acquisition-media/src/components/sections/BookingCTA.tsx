@@ -114,7 +114,7 @@ export default function BookingCTA() {
             data-cursor="BOOK"
             onClick={handleBooking}
           >
-            LOCK IN YOUR FOUNDING RATE →
+            BOOK YOUR FREE STRATEGY CALL →
           </MagneticButton>
         </div>
       </div>

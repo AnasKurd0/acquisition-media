@@ -318,7 +318,7 @@ export default function Guarantee() {
               onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.opacity = '0.88' }}
               onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.opacity = '1' }}
             >
-              LOCK IN YOUR FOUNDING RATE →
+              CLAIM YOUR FOUNDING SPOT →
             </button>
           </div>
         </div>
