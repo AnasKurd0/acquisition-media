@@ -58,6 +58,9 @@ export const metadata: Metadata = {
     canonical: 'https://acquisitionmedia.co.uk',
   },
   robots: { index: true, follow: true },
+  verification: {
+    google: 'yYYBhTov8Pha1UN_j-76geM0Ao4yhPnHFlnIV9SnEgw',
+  },
 }
 
 const schemaOrg = {
