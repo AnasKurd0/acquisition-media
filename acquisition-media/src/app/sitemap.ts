@@ -9,6 +9,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: 'https://acquisitionmedia.co.uk/book',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
       url: 'https://acquisitionmedia.co.uk/playbook',
       lastModified: new Date(),
       changeFrequency: 'monthly',
