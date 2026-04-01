@@ -22,6 +22,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://acquisitionmedia.co.uk'),
   title: 'Acquisition Media — Performance Websites & Paid Ads UK',
   description:
     'UK performance marketing agency. We build high-converting websites and run Google Ads, Meta Ads & TikTok Ads for local service businesses. 90-day results guarantee or we work for free.',
