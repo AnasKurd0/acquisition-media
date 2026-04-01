@@ -32,7 +32,7 @@ export default function FooterCTA() {
           onClick={openCalendly}
           className="mt-8 inline-block px-8 py-4 bg-[#060606] text-[#e8ff00] font-bold tracking-widest text-sm hover:bg-[#0d0d0d] transition-colors"
         >
-          Book a Free Call →
+          LOCK IN YOUR FOUNDING RATE →
         </button>
       </div>
     </section>

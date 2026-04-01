@@ -16,7 +16,7 @@ interface GridBlock {
 const gridBlocks: GridBlock[] = [
   {
     title: 'THE 4-CLIENT ADVANTAGE',
-    body: "King Kong has 150+ clients. VaynerMedia has thousands. We have 4. A founding client gets more founder attention per week than most agencies give their best clients per quarter. This is arithmetic, not a promise.",
+    body: "Large agencies carry 50–200+ clients. We carry 4. A founding client gets more founder attention per week than most agencies give their best clients per quarter. This is arithmetic, not a promise.",
   },
   {
     title: 'WE GUARANTEE WHAT THEY WON\'T',
@@ -27,7 +27,7 @@ const gridBlocks: GridBlock[] = [
     body: "Big agency timeline: brief → account manager → strategy meeting → creative team → internal review → client approval → launch. Six weeks. We launch Google Ads in 48 hours. When a competitor wins your top keyword today, 48 hours matters.",
   },
   {
-    title: 'WE NEED YOUR RESULTS MORE THAN YOU NEED TO GIVE THEM',
+    title: 'WE HAVE MORE TO LOSE THAN ANY LARGE AGENCY DOES',
     body: "At a 50-client agency, one churned client is a rounding error. At Acquisition Media, your results are our case study, our portfolio, our proof. We are structurally more invested in your outcome than any large agency ever could be.",
   },
   {

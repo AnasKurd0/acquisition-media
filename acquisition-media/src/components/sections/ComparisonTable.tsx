@@ -199,7 +199,7 @@ export default function ComparisonTable() {
             onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.opacity = '0.88' }}
             onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.opacity = '1' }}
           >
-            BOOK A FREE STRATEGY CALL →
+            LOCK IN YOUR FOUNDING RATE →
           </button>
           <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#555555', fontSize: '0.8125rem', marginTop: '12px', fontStyle: 'italic' }}>
             30 minutes. A custom growth plan. Yours to keep.

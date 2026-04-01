@@ -25,20 +25,20 @@ export default function Home() {
       <main>
         <Hero />
         <Marquee />
-        <TheProblem />
+        <SocialProof />
         <PerfectFor />
         <Services />
-        <SocialProof />
         <OurProcess />
-        <BenchmarkStats />
         <ROICalculator />
-        <ComparisonTable />
+        <BenchmarkStats />
+        <TheProblem />
         <WhyUs />
+        <ComparisonTable />
         <Guarantee />
+        <FAQ />
         <GrandSlamOffer />
         <BookingCTA />
         <LeadMagnet />
-        <FAQ />
         <FooterCTA />
       </main>
       <Footer />

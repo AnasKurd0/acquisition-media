@@ -281,7 +281,7 @@ export default function ROICalculator() {
               onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.opacity = '0.88'; }}
               onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.opacity = '1'; }}
             >
-              BOOK A CALL TO MAKE THIS REAL →
+              BOOK A STRATEGY CALL →
             </button>
           </div>
         </div>

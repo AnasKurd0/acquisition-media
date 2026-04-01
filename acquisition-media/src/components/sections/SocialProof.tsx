@@ -10,7 +10,7 @@ const stats = [
   { value: '20+', label: 'Qualified leads', sub: 'In the first 30 days of advertising' },
   { value: '$10', label: 'Cost per lead', sub: 'Meta Ads campaign, local service' },
   { value: '£150K+', label: 'In client deals', sub: 'Generated from organic web presence' },
-  { value: 'Millions', label: 'In platform value', sub: 'E-commerce marketplace we engineered' },
+  { value: 'Millions', label: 'In order volume capacity', sub: 'E-commerce marketplace we built' },
 ]
 
 const caseStudies = [
@@ -91,11 +91,11 @@ export default function SocialProof() {
 
         {/* Headline */}
         <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.2em', color: '#555555', textTransform: 'uppercase', marginBottom: '16px' }}>
-          Real work. Real results.
+          CLIENT RESULTS
         </p>
         <h2 style={{ fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif", fontSize: 'clamp(40px, 6vw, 80px)', lineHeight: 1.05, margin: '0 0 64px 0' }}>
-          <span style={{ color: '#f0f0f0', display: 'block' }}>We&apos;re new.</span>
-          <span style={{ color: '#e8ff00', display: 'block' }}>Here&apos;s what that means.</span>
+          <span style={{ color: '#f0f0f0', display: 'block' }}>Early work.</span>
+          <span style={{ color: '#e8ff00', display: 'block' }}>Real results.</span>
         </h2>
 
         {/* Stats strip */}

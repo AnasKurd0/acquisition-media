@@ -6,10 +6,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-// TODO: Connect to email provider (ConvertKit, Mailchimp, etc.)
-// On submit: send firstName + email + industry to your provider, trigger automation
-// that delivers "The £200 Lead System" PDF/Notion doc immediately.
-
 const playbookSections = [
   { num: '01', title: 'The Brief', body: 'What the client needed. What we had to work with. Why the standard approach fails for local service businesses.' },
   { num: '02', title: 'The Ad', body: "The exact commercial we produced — creative direction, script structure, and what made it convert. Templates included." },
@@ -24,6 +20,7 @@ export default function LeadMagnet() {
   const [email, setEmail] = useState('')
   const [industry, setIndustry] = useState('')
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   const leftRef = useRef<HTMLDivElement>(null)
   const rightRef = useRef<HTMLDivElement>(null)
@@ -40,10 +37,20 @@ export default function LeadMagnet() {
     return () => ctx.revert()
   }, [])
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!firstName.trim() || !email.trim()) return
-    // TODO: POST to email provider API here
+    setLoading(true)
+    try {
+      await fetch('/api/lead-magnet', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ firstName: firstName.trim(), email: email.trim(), industry: industry.trim() }),
+      })
+    } catch {
+      // show success regardless — never block the user on a network error
+    }
+    setLoading(false)
     setSubmitted(true)
   }
 
@@ -115,11 +122,12 @@ export default function LeadMagnet() {
               />
               <button
                 type="submit"
-                style={{ background: '#e8ff00', color: '#060606', padding: '16px 24px', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.1em', border: 'none', cursor: 'pointer', fontFamily: 'var(--font-inter), Inter, sans-serif', transition: 'opacity 0.2s ease' }}
-                onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.opacity = '0.88' }}
-                onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.opacity = '1' }}
+                disabled={loading}
+                style={{ background: '#e8ff00', color: '#060606', padding: '16px 24px', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.1em', border: 'none', cursor: loading ? 'not-allowed' : 'pointer', fontFamily: 'var(--font-inter), Inter, sans-serif', transition: 'opacity 0.2s ease', opacity: loading ? 0.7 : 1 }}
+                onMouseEnter={(e) => { if (!loading) (e.currentTarget as HTMLButtonElement).style.opacity = '0.88' }}
+                onMouseLeave={(e) => { if (!loading) (e.currentTarget as HTMLButtonElement).style.opacity = '1' }}
               >
-                SEND ME THE PLAYBOOK →
+                {loading ? 'SENDING...' : 'SEND ME THE PLAYBOOK →'}
               </button>
               <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#555555', fontSize: '0.75rem', margin: 0, fontStyle: 'italic' }}>
                 One email. No sales sequence. Arrives immediately.

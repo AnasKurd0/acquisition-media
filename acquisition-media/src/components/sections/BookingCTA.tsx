@@ -105,20 +105,16 @@ export default function BookingCTA() {
         {/* Sub-copy */}
         <p className="mt-6 text-[#555555] text-lg leading-relaxed max-w-xl mx-auto">
           30 minutes. A real growth plan for your business. Yours to keep whether you move forward or not.
-          <br />
-          No pitch. No pressure. No BS.
-          <br />
-          Just an honest conversation about what growth actually looks like for your business.
         </p>
 
         {/* CTA */}
         <div className="mt-12">
           <MagneticButton
-            className="px-10 py-5 bg-[#e8ff00] text-[#060606] font-bold tracking-widest text-sm hover:scale-105 transition-transform"
+            className="px-16 py-7 bg-[#e8ff00] text-[#060606] font-bold tracking-widest text-base hover:scale-105 transition-transform"
             data-cursor="BOOK"
             onClick={handleBooking}
           >
-            BOOK YOUR FREE STRATEGY CALL
+            LOCK IN YOUR FOUNDING RATE →
           </MagneticButton>
         </div>
       </div>

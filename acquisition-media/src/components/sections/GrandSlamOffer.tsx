@@ -110,13 +110,10 @@ export default function GrandSlamOffer() {
                 >
                   <span style={{ color: '#e8ff00', fontSize: '1rem', flexShrink: 0, lineHeight: 1.5 }}>★</span>
                   <div style={{ flex: 1, minWidth: 0 }}>
-                    <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: '12px', flexWrap: 'wrap' }}>
+                    <div>
                       <h3 style={{ fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif", fontSize: '1.125rem', color: '#f0f0f0', letterSpacing: '0.04em', margin: 0, lineHeight: 1.1 }}>
                         {item.name.toUpperCase()}
                       </h3>
-                      <span style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', fontSize: '0.75rem', fontWeight: 700, color: item.value === 'Priceless' || item.value === 'Included' ? '#555555' : '#e8ff00', letterSpacing: '0.06em', flexShrink: 0 }}>
-                        {item.value}
-                      </span>
                     </div>
                     <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#555555', fontSize: '0.8125rem', lineHeight: 1.6, margin: '4px 0 0 0' }}>
                       {item.desc}
@@ -130,14 +127,14 @@ export default function GrandSlamOffer() {
             <div style={{ marginTop: '20px', padding: '20px', background: '#0d0d0d', border: '1px solid #1a1a1a' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', gap: '8px' }}>
                 <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#555555', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', margin: 0 }}>
-                  If purchased à la carte (year 1):
+                  Equivalent value at a traditional agency:
                 </p>
                 <p style={{ fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif", fontSize: '1.5rem', color: '#555555', textDecoration: 'line-through', margin: 0 }}>
                   £26,000+
                 </p>
               </div>
               <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#555555', fontSize: '0.75rem', fontStyle: 'italic', margin: '8px 0 0 0' }}>
-                Based on standard agency rates: website £4,500 + Google £800/mo + Meta £800/mo + setup fees. Founding clients pay significantly less, locked in forever.
+                Founding clients pay significantly less — and that rate is locked in forever.
               </p>
             </div>
           </div>

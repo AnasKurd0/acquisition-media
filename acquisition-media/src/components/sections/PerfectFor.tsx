@@ -17,7 +17,7 @@ const profiles = [
   },
   {
     tag: 'YOU\'VE TRIED ADS BEFORE',
-    headline: "And it didn't work.",
+    headline: "And nothing showed for it.",
     body: "You boosted a Facebook post. Nothing happened. You hired an agency. They sent a monthly PDF and blamed the algorithm. You spent money with nothing to show for it. That experience was the agency's failure, not the platform's — and not yours.",
     outcome: "Campaigns built correctly from the start — right structure, right targeting, conversion tracking so you can see exactly which ad generated which lead. The difference between a failing campaign and a working one is usually setup, not budget.",
     accent: false,
@@ -186,7 +186,7 @@ export default function PerfectFor() {
         {/* Bottom note */}
         <div style={{ marginTop: '48px', display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
           <p style={{ color: '#555555', fontSize: '0.875rem', margin: 0 }}>
-            Something else? If the lifetime value of your client is meaningful, we can probably help.
+            Something else? If you&apos;re in business and you want more clients, we can probably help.
           </p>
           <button
             type="button"

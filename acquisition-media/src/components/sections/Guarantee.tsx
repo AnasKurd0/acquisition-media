@@ -151,7 +151,7 @@ export default function Guarantee() {
               margin: '0 0 24px 0',
             }}
           >
-            We deliver measurable improvement in your lead volume within 90 days
+            We deliver more leads and more revenue within 90 days
             — or we keep working for free until we do.
           </p>
 
@@ -318,7 +318,7 @@ export default function Guarantee() {
               onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.opacity = '0.88' }}
               onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.opacity = '1' }}
             >
-              BOOK A FREE STRATEGY CALL →
+              LOCK IN YOUR FOUNDING RATE →
             </button>
           </div>
         </div>

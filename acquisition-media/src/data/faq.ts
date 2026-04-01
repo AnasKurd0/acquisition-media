@@ -5,7 +5,7 @@ export const faqs = [
   },
   {
     q: 'How does the 90-day guarantee work?',
-    a: "If we don't deliver a measurable improvement in your lead volume within 90 days, we continue working at no additional cost until we do. This is in your contract.",
+    a: "If we don't increase your lead volume or revenue within 90 days, we continue working at no additional cost until we do. This is in your contract before we start.",
   },
   {
     q: 'Do you lock me in?',
@@ -25,11 +25,11 @@ export const faqs = [
   },
   {
     q: 'What industries do you work with?',
-    a: 'Any business where the lifetime value of a customer is meaningful. Best fit: local service businesses, professional services, health & wellness, trades & contractors.',
+    a: 'Any business that wants more clients. Best fit: local service businesses, professional services, health & wellness, trades & contractors — but if you sell something and you want more buyers, talk to us.',
   },
   {
     q: "What's included in the 90-day guarantee exactly?",
-    a: "We guarantee a measurable improvement in your lead volume within 90 days. If we don't hit that target, we continue working at no additional cost until we do — and that month's management fee is waived. It's written into your contract, not just a verbal promise.",
+    a: "We guarantee more leads or more revenue within 90 days. If we don't hit that target, we continue working at no additional cost until we do — and that month's management fee is waived. It's written into your contract, not just a verbal promise.",
   },
   {
     q: 'Can I just get a website without running ads?',

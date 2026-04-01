@@ -47,7 +47,7 @@ export function AnnouncementBar() {
         >
           {SPOTS_REMAINING} SPOTS LEFT
         </span>
-        Founding client rate — 40% off, locked in for 12 months. Ends when spots fill.
+        Founding client rate — 40% off, locked in forever. Ends when spots fill.
       </p>
       <button
         type="button"
