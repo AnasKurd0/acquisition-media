@@ -9,36 +9,36 @@ import { SPOTS_REMAINING } from '@/data/spots'
 gsap.registerPlugin(ScrollTrigger)
 
 const coreStack = [
-  { name: 'Performance Website', desc: 'Custom-engineered to convert visitors into enquiries. Mobile-first, sub-1s load, SEO architecture, booking system integrated.', value: '£4,500' },
-  { name: 'Google Ads Management', desc: 'Full build, daily monitoring, bid optimisation. First leads typically within 48 hours of launch.', value: '£800/mo' },
-  { name: 'Meta Ads Management', desc: 'Facebook + Instagram. Audience build, creative direction, A/B testing, retargeting. Done for you.', value: '£800/mo' },
-  { name: 'Conversion Tracking Setup', desc: 'Google Tag Manager + conversion events. Every lead traced to its exact source. You know what works.', value: '£600' },
-  { name: 'Booking System Integration', desc: 'One tap from ad to calendar. No friction. No drop-off between traffic and enquiry.', value: '£400' },
-  { name: 'Weekly Performance Reports', desc: "Plain-English update every week. Cost-per-lead, what worked, what we're changing next. Two minutes to read. No jargon.", value: 'Included' },
-  { name: 'Direct Access to Anas', desc: 'WhatsApp and email directly to Anas — the founder running your campaigns. Response within hours, not days.', value: 'Included' },
-  { name: '90-Day Results Guarantee', desc: 'Measurable improvement in lead volume or next month is free. Written into your contract before we start.', value: 'Priceless' },
-  { name: 'Month-to-Month After 90 Days', desc: 'Cancel with 30 days notice. No exit fees. No 12-month lock-in. You stay because it works.', value: 'Priceless' },
+  { name: 'Conversion-Engineered Website', desc: 'Custom-built to convert visitors into enquiries — not just look good. Mobile-first, sub-1s load, SEO architecture, booking system wired in.', value: '£4,500' },
+  { name: 'Google Ads — Built, Managed, Optimised', desc: 'Full build, daily monitoring, bid optimisation. First enquiries typically arrive within 48 hours of campaign launch.', value: '£800/mo' },
+  { name: 'Meta Ads — Done Completely For You', desc: 'Facebook + Instagram. Audience build, creative direction, A/B testing, retargeting. Not set up and left. Actively managed.', value: '£800/mo' },
+  { name: 'Full Conversion Tracking Setup', desc: 'Google Tag Manager + conversion events wired to every lead source. You will always know which campaign, which ad, which keyword paid for itself.', value: '£600' },
+  { name: 'Booking System Integration', desc: 'One tap from ad to calendar booking. No friction. No phone tag. No lost enquiries in a contact form nobody checks.', value: '£400' },
+  { name: 'Weekly Performance Reports', desc: 'Plain-English summary every Monday. Cost-per-lead, what changed, what is changing next. Two minutes to read. No jargon. No excuses.', value: '£200/mo' },
+  { name: 'Direct WhatsApp Access to Anas', desc: 'Personal number. Response within hours. The person running your campaigns is the person you can reach. Not a ticket system.', value: '£500/mo' },
+  { name: '90-Day Results Guarantee', desc: 'A specific lead target agreed in writing before we start. Hit it or we work without charge until we do. No renegotiation.', value: 'Cannot be purchased elsewhere' },
+  { name: 'Month-to-Month After 90 Days', desc: 'Cancel with 30 days notice. No exit fees. No 12-month lock-in. You stay because results compound — not because a contract forces you.', value: 'Cannot be purchased elsewhere' },
 ]
 
 const bonuses = [
   {
     num: '①',
     name: 'The 48-Hour Launch Watch',
-    body: "For your first 48 hours live, Anas personally monitors your campaign morning and evening — every ad, every bid, every signal. Not automated. Not delegated. The person who built it, watching it deploy in real time. No agency carrying 50+ clients can do this. We can because we have 4.",
-    value: 'Cannot be bought at any price elsewhere',
-    note: 'First 48 hours of campaign launch',
+    body: "For the first 48 hours your campaign is live, Anas monitors every signal morning and evening — every ad, every bid, every conversion. Not automated. Not delegated. The person who built it, watching it in real time so problems are caught in hours, not the next monthly review. No agency managing 50+ clients can do this. We can because we cap at 4.",
+    value: 'Cannot be purchased anywhere else',
+    note: 'Active from campaign launch',
   },
   {
     num: '②',
     name: 'The Competitor Intelligence Sweep',
-    body: "Before your first pound is spent, we reverse-engineer your top 3 competitors — every live ad, every tested angle, every platform active. You enter the market knowing exactly what the audience has already seen, what they are bored of, and where the gap is. Most businesses never get this intelligence at all.",
+    body: "Before your first pound is spent, we reverse-engineer your top 3 competitors — every live ad, every tested angle, every active platform. You enter the market knowing exactly what your audience has already seen, what they are bored of, and where the gap is. You don't go live guessing. You go live knowing.",
     value: '£600+ equivalent value',
     note: 'Delivered 7 days before launch',
   },
   {
     num: '③',
-    name: 'Your 90-Day Growth Roadmap (Yours to Keep)',
-    body: "On the strategy call, we build your custom 90-day plan — target CPL for your industry, projected lead volume at each spend level, which channel to start with, and the exact metrics that tell us it is working. Whether you become a client or not, this plan is yours. No strings attached.",
+    name: 'Your 90-Day Pipeline Blueprint',
+    body: "On the strategy call, we build your custom 90-day plan — target CPL for your niche, projected lead volume at each spend level, which channel to launch first, and the exact metrics that tell us whether it's working. Written. Specific. Yours to keep permanently — whether you become a client or not. No strings attached.",
     value: '£500 value — yours free',
     note: 'Built live on the strategy call',
   },
@@ -82,15 +82,15 @@ export default function GrandSlamOffer() {
         {/* Top — dream outcome */}
         <div ref={topRef} style={{ textAlign: 'center', marginBottom: '80px', opacity: 0 }}>
           <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.2em', color: '#e8ff00', textTransform: 'uppercase', marginBottom: '24px' }}>
-            THE FOUNDING CLIENT ACQUISITION SYSTEM
+            THE ACQUISITION ENGINE — FOUNDING CLIENT PROGRAMME
           </p>
-          <h2 style={{ fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif", fontSize: 'clamp(40px, 6vw, 88px)', lineHeight: 1.0, margin: '0 0 24px 0' }}>
-            <span style={{ color: '#555555', display: 'block' }}>Wake up Monday.</span>
-            <span style={{ color: '#f0f0f0', display: 'block' }}>Pipeline&apos;s full.</span>
-            <span style={{ color: '#e8ff00', display: 'block' }}>No guessing. Just growth.</span>
+          <h2 style={{ fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif", fontSize: 'clamp(44px, 6.5vw, 96px)', lineHeight: 1.0, margin: '0 0 24px 0' }}>
+            <span style={{ color: '#555555', display: 'block' }}>New clients.</span>
+            <span style={{ color: '#f0f0f0', display: 'block' }}>Every week.</span>
+            <span style={{ color: '#e8ff00', display: 'block' }}>Predictably.</span>
           </h2>
           <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#555555', fontSize: '1rem', lineHeight: 1.75, maxWidth: '600px', margin: '0 auto' }}>
-            Most agencies sell you campaigns and disappear. We build you a system — one that compounds. Every week, the data improves. Every month, the cost-per-lead drops. Here is everything the founding clients receive.
+            Not because you got lucky. Because you built a system. The Acquisition Engine is our proven paid acquisition methodology — deployed, managed, and guaranteed for your business. Here is everything founding clients receive.
           </p>
         </div>
 
@@ -111,10 +111,13 @@ export default function GrandSlamOffer() {
                 >
                   <span style={{ color: '#e8ff00', fontSize: '1rem', flexShrink: 0, lineHeight: 1.5 }}>★</span>
                   <div style={{ flex: 1, minWidth: 0 }}>
-                    <div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: '8px', flexWrap: 'wrap' }}>
                       <h3 style={{ fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif", fontSize: '1.125rem', color: '#f0f0f0', letterSpacing: '0.04em', margin: 0, lineHeight: 1.1 }}>
                         {item.name.toUpperCase()}
                       </h3>
+                      <span style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#333333', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.06em', flexShrink: 0 }}>
+                        {item.value}
+                      </span>
                     </div>
                     <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#555555', fontSize: '0.8125rem', lineHeight: 1.6, margin: '4px 0 0 0' }}>
                       {item.desc}
@@ -128,42 +131,53 @@ export default function GrandSlamOffer() {
             <div style={{ marginTop: '20px', padding: '20px', background: '#0d0d0d', border: '1px solid #1a1a1a' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', gap: '8px' }}>
                 <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#555555', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', margin: 0 }}>
-                  Equivalent value at a traditional agency:
+                  Total equivalent value at a traditional agency:
                 </p>
                 <p style={{ fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif", fontSize: '1.5rem', color: '#555555', textDecoration: 'line-through', margin: 0 }}>
-                  £26,000+
+                  £27,100+
                 </p>
               </div>
               <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#555555', fontSize: '0.75rem', fontStyle: 'italic', margin: '8px 0 0 0' }}>
-                Founding clients pay 40% below standard market rate — locked in permanently. As we scale and raise prices, founding clients stay at this rate. Exact investment confirmed on the strategy call.
+                Founding clients pay 40% below this — permanently locked in. As we scale and raise prices, founding clients keep their rate forever. Exact investment confirmed on the strategy call.
               </p>
             </div>
           </div>
 
-          {/* Right — guarantee + scarcity + CTA */}
+          {/* Right — guarantees + scarcity + CTA */}
           <div ref={rightRef} style={{ display: 'flex', flexDirection: 'column', gap: '24px', opacity: 0 }}>
 
-            {/* Guarantee */}
+            {/* Three Guarantees */}
             <div style={{ border: '1px solid #e8ff00', background: '#0d0d0d', padding: '32px', position: 'relative', overflow: 'hidden' }}>
               <div aria-hidden="true" style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 50% 0%, rgba(232,255,0,0.05) 0%, transparent 65%)', pointerEvents: 'none' }} />
               <div style={{ position: 'relative', zIndex: 1 }}>
                 <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.2em', color: '#e8ff00', textTransform: 'uppercase', marginBottom: '20px' }}>
-                  TWO GUARANTEES. IN WRITING.
+                  THREE GUARANTEES. IN WRITING.
                 </p>
+
                 <div style={{ marginBottom: '20px' }}>
-                  <h3 style={{ fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif", fontSize: '1.25rem', color: '#f0f0f0', letterSpacing: '0.05em', margin: '0 0 8px 0' }}>
+                  <h3 style={{ fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif", fontSize: '1.125rem', color: '#f0f0f0', letterSpacing: '0.05em', margin: '0 0 8px 0' }}>
                     90-DAY RESULTS GUARANTEE
                   </h3>
                   <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#555555', fontSize: '0.875rem', lineHeight: 1.65, margin: 0 }}>
-                    Measurable improvement in your lead volume within 90 days — or we don&apos;t collect that month&apos;s retainer and keep working until we deliver. Written into the contract.
+                    We agree a specific lead target in your contract before a single pound is spent. Hit it within 90 days or we work without charge until we do. No renegotiation. No excuses.
                   </p>
                 </div>
-                <div style={{ borderTop: '1px solid #1a1a1a', paddingTop: '20px' }}>
-                  <h3 style={{ fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif", fontSize: '1.25rem', color: '#f0f0f0', letterSpacing: '0.05em', margin: '0 0 8px 0' }}>
+
+                <div style={{ borderTop: '1px solid #1a1a1a', paddingTop: '20px', marginBottom: '20px' }}>
+                  <h3 style={{ fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif", fontSize: '1.125rem', color: '#f0f0f0', letterSpacing: '0.05em', margin: '0 0 8px 0' }}>
                     48-HOUR FAST-START GUARANTEE
                   </h3>
                   <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#555555', fontSize: '0.875rem', lineHeight: 1.65, margin: 0 }}>
-                    First qualified lead from your Google Ads within 48 hours of campaign launch — or we pause billing until it happens.
+                    First qualified enquiry from your Google Ads within 48 hours of launch — or billing pauses until it happens.
+                  </p>
+                </div>
+
+                <div style={{ borderTop: '1px solid #1a1a1a', paddingTop: '20px' }}>
+                  <h3 style={{ fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif", fontSize: '1.125rem', color: '#f0f0f0', letterSpacing: '0.05em', margin: '0 0 8px 0' }}>
+                    30-DAY WORRY-FREE EXIT
+                  </h3>
+                  <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#555555', fontSize: '0.875rem', lineHeight: 1.65, margin: 0 }}>
+                    If you are unhappy with anything in your first 30 days — the communication, the direction, the creative — we refund your first month's retainer in full. No clauses. No minimum spend threshold. Full refund.
                   </p>
                 </div>
               </div>
@@ -172,13 +186,13 @@ export default function GrandSlamOffer() {
             {/* Scarcity */}
             <div style={{ background: '#0d0d0d', border: '1px solid #1a1a1a', padding: '32px', textAlign: 'center' }}>
               <p style={{ fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif", fontSize: 'clamp(24px, 3.5vw, 40px)', color: '#e8ff00', lineHeight: 1.05, margin: '0 0 8px 0' }}>
-                {SPOTS_REMAINING} OF 4 SPOTS REMAINING.
+                {SPOTS_REMAINING} OF 4 FOUNDING SPOTS REMAINING.
               </p>
-              <p style={{ fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif", fontSize: 'clamp(16px, 2.5vw, 24px)', color: '#f0f0f0', lineHeight: 1.05, margin: '0 0 16px 0' }}>
-                NOT 4 PER MONTH. 4. EVER.
+              <p style={{ fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif", fontSize: 'clamp(15px, 2.2vw, 22px)', color: '#f0f0f0', lineHeight: 1.1, margin: '0 0 16px 0' }}>
+                4 CLIENTS. MAXIMUM. EVER. THAT IS WHY THE GUARANTEE EXISTS.
               </p>
               <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#555555', fontSize: '0.875rem', lineHeight: 1.65, margin: 0 }}>
-                These 2 remaining businesses get founding rates locked in forever, direct founder access, and the three bonuses below. When they&apos;re gone, this offer closes permanently — no waitlist, no exceptions.
+                The {SPOTS_REMAINING} remaining businesses receive founding rates locked permanently, all three bonuses below, and direct access to Anas for the life of the engagement. When they are gone, this offer closes. No waitlist.
               </p>
             </div>
 
@@ -191,10 +205,10 @@ export default function GrandSlamOffer() {
                 onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.opacity = '0.88' }}
                 onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.opacity = '1' }}
               >
-                LOCK IN YOUR FOUNDING RATE →
+                CLAIM ONE OF {SPOTS_REMAINING} REMAINING SPOTS →
               </button>
               <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#555555', fontSize: '0.75rem', lineHeight: 1.6, margin: 0, fontStyle: 'italic', textAlign: 'center' }}>
-                30-minute call. Pricing, timeline, and a full growth plan for your business — all discussed on the call. Yours to keep whether you move forward or not.
+                30-minute call. We build your 90-day pipeline blueprint live. Pricing, timeline, and lead targets all confirmed on the call. Yours to keep whether you move forward or not.
               </p>
             </div>
           </div>

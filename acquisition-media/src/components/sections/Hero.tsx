@@ -215,9 +215,7 @@ export default function Hero() {
             opacity: 0,
           }}
         >
-          We build high-converting websites and run paid ads that grow your business — predictably,
-          measurably, and with a guarantee no large agency will match. First leads in 48 hours.
-          Full results in 90 days. Or we work for free until we deliver.
+          New enquiries in your calendar. Every week. Without chasing them. We deploy a proven client acquisition system for your business — built, managed, and guaranteed by the founder personally. First enquiry in 48 hours. Full results in 90 days. Or we work without charge until we deliver.
         </p>
 
         {/* CTA Buttons */}
@@ -279,7 +277,7 @@ export default function Hero() {
             opacity: 0,
           }}
         >
-          {['✓ 90-Day Results Guarantee', '✓ First Lead in 48 Hours', '✓ No Lock-In Contract', '✓ Direct Founder Access'].map((item) => (
+          {['✓ 3 Written Guarantees', '✓ First Enquiry in 48 Hours', '✓ No Lock-In Contract', '✓ Direct Founder Access'].map((item) => (
             <span
               key={item}
               style={{

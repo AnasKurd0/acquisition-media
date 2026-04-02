@@ -27,20 +27,20 @@ export default function Home() {
       <main>
         <Hero />
         <Marquee />
-        <SocialProof />
+        <TheProblem />
         <PerfectFor />
+        <SocialProof />
         <Services />
         <OurProcess />
-        <ROICalculator />
         <BenchmarkStats />
-        <TheProblem />
+        <ROICalculator />
         <VSLSection />
         <WhyUs />
         <ComparisonTable />
         <Guarantee />
-        <FAQ />
         <GrandSlamOffer />
         <FounderSection />
+        <FAQ />
         <BookingCTA />
         <LeadMagnet />
         <FooterCTA />

@@ -32,6 +32,12 @@ const PAIN_POINTS: PainPoint[] = [
     description:
       "By the time you realised it wasn't working, you were 7 months into a contract you couldn't exit.",
   },
+  {
+    number: '04',
+    title: "YOU'VE NEVER SPOKEN TO THE PERSON RUNNING YOUR CAMPAIGNS.",
+    description:
+      "The senior who pitched you moved on. Your account is now line 83 on a junior's list. You email 'the team'. You wait days. Your budget keeps spending.",
+  },
 ]
 
 export default function TheProblem() {

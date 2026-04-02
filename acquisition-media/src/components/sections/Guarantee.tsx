@@ -79,6 +79,9 @@ export default function Guarantee() {
           textAlign: 'center',
         }}
       >
+          <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.2em', color: '#555555', textTransform: 'uppercase', margin: '0 0 20px 0' }}>
+            THREE GUARANTEES. IN WRITING.
+          </p>
         <h2
           style={{
             fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif",
@@ -89,10 +92,10 @@ export default function Guarantee() {
           }}
         >
           <span style={{ color: '#f0f0f0', display: 'block' }}>
-            The Acquisition
+            Zero risk.
           </span>
           <span style={{ color: '#e8ff00', display: 'block' }}>
-            Guarantee.
+            On paper.
           </span>
         </h2>
       </div>
@@ -152,8 +155,7 @@ export default function Guarantee() {
               margin: '0 0 24px 0',
             }}
           >
-            We deliver more leads and more revenue within 90 days
-            — or we keep working for free until we do.
+            We put a specific lead number in your contract before a single pound is spent — and we hit it within 90 days, or we keep working without charge until we do.
           </p>
 
           {/* Sub line */}
@@ -167,7 +169,7 @@ export default function Guarantee() {
               margin: '0 0 32px 0',
             }}
           >
-            That&rsquo;s not a marketing line. That&rsquo;s our contract.
+            Not a marketing line. A number. In your contract. Before we start.
           </p>
 
           {/* How it works paragraph */}
@@ -179,7 +181,7 @@ export default function Guarantee() {
               margin: '0 0 32px 0',
             }}
           >
-            On day one, we establish a written baseline — your current lead volume, enquiry rate, or revenue figure. The target is agreed before any work begins. At day 90, we measure against that baseline. No ambiguity. No moving goalposts. Either the number moved or it didn&rsquo;t.
+            On day one, we set a written baseline — your current lead volume, enquiry rate, or revenue figure. A specific target is agreed and written into the contract before any work begins. At day 90, we measure against it. No ambiguity. No moving goalposts. Either the number is in the contract and it was hit — or we keep working at no cost until it is.
           </p>
 
           {/* Checklist */}
@@ -283,6 +285,51 @@ export default function Guarantee() {
             </p>
           </div>
 
+          {/* 30-Day Exit Guarantee */}
+          <div
+            style={{
+              marginTop: '28px',
+              borderTop: '1px solid #1a1a1a',
+              paddingTop: '24px',
+            }}
+          >
+            <span
+              style={{
+                display: 'inline-block',
+                border: '1px solid #e8ff00',
+                color: '#e8ff00',
+                padding: '5px 14px',
+                fontSize: '11px',
+                fontWeight: 700,
+                letterSpacing: '0.2em',
+                fontFamily: 'var(--font-inter), Inter, sans-serif',
+                marginBottom: '14px',
+              }}
+            >
+              30-DAY WORRY-FREE EXIT
+            </span>
+            <p
+              style={{
+                color: '#f0f0f0',
+                fontSize: '1rem',
+                lineHeight: 1.7,
+                margin: '0 0 8px 0',
+              }}
+            >
+              If you are unhappy with anything in your first 30 days — the communication, the direction, the creative — we refund your first month&rsquo;s retainer in full.
+            </p>
+            <p
+              style={{
+                color: '#555555',
+                fontSize: '0.875rem',
+                lineHeight: 1.65,
+                margin: 0,
+              }}
+            >
+              No clauses. No minimum spend threshold. No questions. Full refund. We are confident enough in the process that we do not need to trap you in it.
+            </p>
+          </div>
+
           {/* Footer note */}
           <p
             style={{
@@ -293,7 +340,7 @@ export default function Guarantee() {
               lineHeight: 1.6,
             }}
           >
-            We only take 2 more founding clients. That&rsquo;s not a sales tactic.
+            We only take {`${2}`} more founding clients. That&rsquo;s not a sales tactic.
             It&rsquo;s precisely how we can guarantee the outcome — fewer clients means more control over each one.
           </p>
 

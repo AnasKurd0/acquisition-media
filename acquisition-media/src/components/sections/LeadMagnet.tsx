@@ -66,7 +66,7 @@ export default function LeadMagnet() {
         {/* Left — form */}
         <div ref={leftRef} style={{ opacity: 0 }}>
           <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.2em', color: '#555555', textTransform: 'uppercase', marginBottom: '16px' }}>
-            NOT READY TO BOOK A CALL?
+            READ THIS FIRST
           </p>
 
           <h2 style={{ fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif", fontSize: 'clamp(36px, 5vw, 68px)', lineHeight: 1.0, margin: '0 0 8px 0' }}>
@@ -74,11 +74,11 @@ export default function LeadMagnet() {
             <span style={{ color: '#e8ff00', display: 'block' }}>£200 spend.</span>
           </h2>
           <h2 style={{ fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif", fontSize: 'clamp(22px, 3vw, 36px)', color: '#555555', lineHeight: 1.1, margin: '0 0 24px 0' }}>
-            30 days. The exact playbook.
+            30 days. The exact campaign breakdown.
           </h2>
 
           <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#555555', fontSize: '0.9375rem', lineHeight: 1.7, marginBottom: '32px', maxWidth: '440px' }}>
-            The real case study — ad creative, targeting, tracking setup, and results. Plus the 6 red flags that tell you an agency is wasting your money. Free. No pitch sequence.
+            The full case study — the ad, the targeting, the tracking, the results. See precisely what The Acquisition Engine produced for a real business on a £200 budget. Plus: the 6 warning signs that tell you an agency is quietly wasting your money right now.
           </p>
 
           {submitted ? (
@@ -129,10 +129,10 @@ export default function LeadMagnet() {
                 onMouseEnter={(e) => { if (!loading) (e.currentTarget as HTMLButtonElement).style.opacity = '0.88' }}
                 onMouseLeave={(e) => { if (!loading) (e.currentTarget as HTMLButtonElement).style.opacity = '1' }}
               >
-                {loading ? 'SENDING...' : 'SEND ME THE PLAYBOOK →'}
+                {loading ? 'SENDING...' : 'SEND ME THE CASE STUDY →'}
               </button>
               <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#555555', fontSize: '0.75rem', margin: 0, fontStyle: 'italic' }}>
-                One email. No sales sequence. Arrives immediately.
+                One email. No pitch sequence. Yours in under 2 minutes.
               </p>
             </form>
           )}
@@ -148,10 +148,10 @@ export default function LeadMagnet() {
             {/* Card header */}
             <div style={{ background: '#e8ff00', padding: '20px 28px' }}>
               <p style={{ fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif", fontSize: '1.375rem', color: '#060606', letterSpacing: '0.08em', margin: '0 0 2px 0' }}>
-                THE £200 LEAD SYSTEM
+                THE ACQUISITION ENGINE — CASE STUDY
               </p>
               <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', fontSize: '0.75rem', color: '#060606', fontWeight: 600, opacity: 0.7, margin: 0, letterSpacing: '0.06em' }}>
-                CASE STUDY + FULL PLAYBOOK · 6 SECTIONS
+                £200 CAMPAIGN BREAKDOWN · 6 SECTIONS · FREE
               </p>
             </div>
 
