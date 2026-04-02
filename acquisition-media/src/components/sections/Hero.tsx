@@ -211,11 +211,26 @@ export default function Hero() {
             fontSize: '18px',
             lineHeight: 1.7,
             fontFamily: 'var(--font-inter), Inter, sans-serif',
+            marginBottom: '16px',
+            opacity: 0,
+          }}
+        >
+          Google Ads. Meta Ads. A website engineered to convert. All built, managed, and optimised for you — by the founder directly, not an account manager. We put a specific lead target in your contract before we start and hit it within 90 days. Or we work without charge until we do.
+        </p>
+        <p
+          className="hero-subhead"
+          style={{
+            color: '#e8ff00',
+            maxWidth: '576px',
+            fontSize: '13px',
+            fontWeight: 700,
+            letterSpacing: '0.08em',
+            fontFamily: 'var(--font-inter), Inter, sans-serif',
             marginBottom: '40px',
             opacity: 0,
           }}
         >
-          New enquiries in your calendar. Every week. Without chasing them. We deploy a proven client acquisition system for your business — built, managed, and guaranteed by the founder personally. First enquiry in 48 hours. Full results in 90 days. Or we work without charge until we deliver.
+          ★ {SPOTS_REMAINING} founding spots open — rates locked 40% below market, permanently.
         </p>
 
         {/* CTA Buttons */}
@@ -239,7 +254,7 @@ export default function Hero() {
               cursor: 'pointer',
             }}
           >
-            CLAIM A FOUNDING SPOT →
+            BOOK A FREE STRATEGY CALL →
           </button>
           <a
             href="#our-process"
@@ -277,7 +292,7 @@ export default function Hero() {
             opacity: 0,
           }}
         >
-          {['✓ 3 Written Guarantees', '✓ First Enquiry in 48 Hours', '✓ No Lock-In Contract', '✓ Direct Founder Access'].map((item) => (
+          {['✓ Google & Meta Ads', '✓ Conversion Website', '✓ 3 Written Guarantees', '✓ First Enquiry in 48 Hours', '✓ Direct Founder Access'].map((item) => (
             <span
               key={item}
               style={{

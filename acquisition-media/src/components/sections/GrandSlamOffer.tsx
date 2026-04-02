@@ -82,15 +82,18 @@ export default function GrandSlamOffer() {
         {/* Top — dream outcome */}
         <div ref={topRef} style={{ textAlign: 'center', marginBottom: '80px', opacity: 0 }}>
           <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.2em', color: '#e8ff00', textTransform: 'uppercase', marginBottom: '24px' }}>
-            THE ACQUISITION ENGINE — FOUNDING CLIENT PROGRAMME
+            THE FULL OFFER — WHAT YOU ACTUALLY GET
           </p>
           <h2 style={{ fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif", fontSize: 'clamp(44px, 6.5vw, 96px)', lineHeight: 1.0, margin: '0 0 24px 0' }}>
             <span style={{ color: '#555555', display: 'block' }}>New clients.</span>
             <span style={{ color: '#f0f0f0', display: 'block' }}>Every week.</span>
             <span style={{ color: '#e8ff00', display: 'block' }}>Predictably.</span>
           </h2>
-          <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#555555', fontSize: '1rem', lineHeight: 1.75, maxWidth: '600px', margin: '0 auto' }}>
-            Not because you got lucky. Because you built a system. The Acquisition Engine is our proven paid acquisition methodology — deployed, managed, and guaranteed for your business. Here is everything founding clients receive.
+          <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#555555', fontSize: '1rem', lineHeight: 1.75, maxWidth: '640px', margin: '0 auto 16px' }}>
+            This is what we do — Google Ads, Meta Ads, and a conversion-engineered website, all built and managed by the founder directly. Founding clients receive the full service plus permanently locked pricing and three exclusive bonuses available only while these spots remain open.
+          </p>
+          <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#333333', fontSize: '0.8125rem', lineHeight: 1.6, maxWidth: '480px', margin: '0 auto', fontStyle: 'italic' }}>
+            Standard clients are taken on at market rate once founding spots close — enquire on the call. Founding clients lock their rate forever.
           </p>
         </div>
 

@@ -117,7 +117,7 @@ export default function TheProblem() {
               display: 'block',
             }}
           >
-            Why your last agency
+            Why your pipeline is
           </div>
           <div
             style={{
@@ -128,7 +128,7 @@ export default function TheProblem() {
               display: 'block',
             }}
           >
-            didn't work.
+            unpredictable right now.
           </div>
         </div>
 
