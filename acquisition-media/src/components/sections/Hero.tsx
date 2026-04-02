@@ -182,7 +182,7 @@ export default function Hero() {
                 display: 'block',
               }}
             >
-              PREDICTABLY.
+              EVERY WEEK.
             </h1>
           </div>
           <div style={{ overflow: 'hidden' }}>
@@ -207,31 +207,39 @@ export default function Hero() {
           className="hero-subhead"
           style={{
             color: '#555555',
-            maxWidth: '576px',
-            fontSize: '18px',
-            lineHeight: 1.7,
+            maxWidth: '560px',
+            fontSize: '17px',
+            lineHeight: 1.75,
             fontFamily: 'var(--font-inter), Inter, sans-serif',
-            marginBottom: '16px',
+            marginBottom: '32px',
             opacity: 0,
           }}
         >
-          Google Ads. Meta Ads. A website engineered to convert. All built, managed, and optimised for you — by the founder directly, not an account manager. We put a specific lead target in your contract before we start and hit it within 90 days. Or we work without charge until we do.
+          Most agencies hand your account to a junior and send reports nobody reads. We built the structural opposite — a maximum of 4 clients, every campaign built and managed by Anas personally, and a specific lead number written into your contract before we spend a single pound. Google Ads, Meta Ads, conversion website. 90 days to hit the target. Or we work for free.
         </p>
-        <p
+
+        {/* Offer summary strip */}
+        <div
           className="hero-subhead"
           style={{
-            color: '#e8ff00',
-            maxWidth: '576px',
-            fontSize: '13px',
-            fontWeight: 700,
-            letterSpacing: '0.08em',
-            fontFamily: 'var(--font-inter), Inter, sans-serif',
-            marginBottom: '40px',
+            maxWidth: '560px',
+            marginBottom: '32px',
+            padding: '16px 20px',
+            background: '#0d0d0d',
+            border: '1px solid #1a1a1a',
             opacity: 0,
           }}
         >
-          ★ {SPOTS_REMAINING} founding spots open — rates locked 40% below market, permanently.
-        </p>
+          <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#555555', fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', margin: '0 0 8px 0' }}>
+            What&apos;s in the offer:
+          </p>
+          <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#f0f0f0', fontSize: '0.8125rem', lineHeight: 1.6, margin: '0 0 10px 0' }}>
+            Custom website · Google Ads · Meta Ads · Conversion tracking · Weekly reports · Direct founder access · 3 written guarantees · Month-to-month after 90 days
+          </p>
+          <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#e8ff00', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.08em', margin: 0 }}>
+            ★ {SPOTS_REMAINING} founding spots: permanently 40% below market rate + 3 exclusive bonuses
+          </p>
+        </div>
 
         {/* CTA Buttons */}
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', alignItems: 'center' }}>
@@ -292,7 +300,7 @@ export default function Hero() {
             opacity: 0,
           }}
         >
-          {['✓ Google & Meta Ads', '✓ Conversion Website', '✓ 3 Written Guarantees', '✓ First Enquiry in 48 Hours', '✓ Direct Founder Access'].map((item) => (
+          {['✓ Google + Meta Ads', '✓ Custom Website', '✓ First Lead in 48 Hours', '✓ 3 Written Guarantees', '✓ Max 4 Clients — Never Line 83'].map((item) => (
             <span
               key={item}
               style={{
