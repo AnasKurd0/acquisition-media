@@ -9,6 +9,15 @@ function CalendlyEmbed() {
   const initialised = useRef(false)
 
   useEffect(() => {
+    // Redirect to /thank-you when booking is confirmed — bypasses Calendly's
+    // own "continue to site?" dialog entirely
+    function handleMessage(e: MessageEvent) {
+      if (typeof e.data === 'object' && e.data?.event === 'calendly.event_scheduled') {
+        window.location.href = '/thank-you'
+      }
+    }
+    window.addEventListener('message', handleMessage)
+
     const init = () => {
       if (initialised.current) return
       if (!embedRef.current) return
@@ -32,8 +41,14 @@ function CalendlyEmbed() {
         }
       }, 150)
       const timeout = setTimeout(() => clearInterval(interval), 5000)
-      return () => { clearInterval(interval); clearTimeout(timeout) }
+      return () => {
+        window.removeEventListener('message', handleMessage)
+        clearInterval(interval)
+        clearTimeout(timeout)
+      }
     }
+
+    return () => window.removeEventListener('message', handleMessage)
   }, [])
 
   return (
