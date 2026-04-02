@@ -134,9 +134,9 @@ export function EntryModal() {
                 margin: '0 0 8px 0',
               }}
             >
-              GET 6 MORE CLIENTS
+              5–50+ NEW LEADS.
               <br />
-              <span style={{ color: '#e8ff00' }}>THIS MONTH.</span>
+              <span style={{ color: '#e8ff00' }}>THE EXACT SYSTEM. FREE.</span>
             </h2>
 
             {/* Subhead */}

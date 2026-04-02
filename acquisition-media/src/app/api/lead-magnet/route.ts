@@ -20,16 +20,18 @@ export async function POST(request: NextRequest) {
   }
 
   const { firstName, email } = body
-  if (!firstName?.trim() || !email?.trim()) {
-    return NextResponse.json({ error: 'Missing fields' }, { status: 400 })
+  if (!email?.trim()) {
+    return NextResponse.json({ error: 'Email is required' }, { status: 400 })
   }
+  // firstName is optional — used in email greeting if provided
+  const name = firstName?.trim() || 'there'
 
   const apiKey = process.env.RESEND_API_KEY
   const from = process.env.RESEND_FROM ?? 'Acquisition Media <onboarding@resend.dev>'
 
   if (!apiKey) {
     // Dev fallback — log the lead, return success so UX still works
-    console.log(`[LeadMagnet] Lead captured (no RESEND_API_KEY): ${email} — ${firstName}`)
+    console.log(`[LeadMagnet] Lead captured (no RESEND_API_KEY): ${email} — ${name}`)
     return NextResponse.json({ ok: true })
   }
 
@@ -41,29 +43,35 @@ export async function POST(request: NextRequest) {
     <p style="font-family:'Bebas Neue',Arial,sans-serif;font-size:11px;color:#555555;letter-spacing:0.2em;text-transform:uppercase;margin:0 0 24px 0;">
       ACQUISITION MEDIA
     </p>
-    <h1 style="font-family:'Bebas Neue',Arial,sans-serif;font-size:40px;color:#e8ff00;margin:0 0 4px 0;letter-spacing:0.05em;line-height:1.05;">
-      THE £200 LEAD SYSTEM
+    <h1 style="font-family:'Bebas Neue',Arial,sans-serif;font-size:44px;color:#e8ff00;margin:0 0 4px 0;letter-spacing:0.05em;line-height:1.0;">
+      THE ACQUISITION ENGINE
     </h1>
-    <p style="font-family:Inter,Arial,sans-serif;font-size:12px;color:#555555;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;margin:0 0 40px 0;">
-      CASE STUDY + FULL PLAYBOOK · 6 SECTIONS
+    <h2 style="font-family:'Bebas Neue',Arial,sans-serif;font-size:28px;color:#f0f0f0;margin:0 0 4px 0;letter-spacing:0.04em;line-height:1.1;">
+      COMPLETE PLAYBOOK
+    </h2>
+    <p style="font-family:Inter,Arial,sans-serif;font-size:11px;color:#555555;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;margin:0 0 40px 0;">
+      PLATFORM DECISION · CAMPAIGN ARCHITECTURE · TRACKING · BENCHMARKS · CASE STUDY · AGENCY AUDIT
     </p>
 
-    <p style="font-size:16px;line-height:1.7;color:#f0f0f0;margin:0 0 16px 0;">
-      Hi ${firstName},
+    <p style="font-size:16px;line-height:1.7;color:#f0f0f0;margin:0 0 12px 0;">
+      Hi ${name},
+    </p>
+    <p style="font-size:15px;line-height:1.75;color:#555555;margin:0 0 16px 0;">
+      Here is the complete paid acquisition system we use for every client — the frameworks, the numbers, the decisions, the benchmarks. Six sections. Everything.
     </p>
     <p style="font-size:15px;line-height:1.75;color:#555555;margin:0 0 40px 0;">
-      Here's the exact breakdown of how we generated 27 qualified leads for £200 in 30 days — the ad creative, targeting setup, tracking, and week-by-week results. Plus the 6 red flags that tell you an agency is wasting your money.
+      This is not an ebook with stock photos and vague advice. This is the actual thinking behind the 27 leads, £200 spend, £7.25 CPL campaign. Read it. Then decide if you want us to run it for you.
     </p>
 
     <div style="background:#0d0d0d;border:1px solid #1a1a1a;padding:28px 32px;margin:0 0 40px 0;">
       <p style="font-size:11px;font-weight:700;color:#e8ff00;letter-spacing:0.2em;text-transform:uppercase;margin:0 0 20px 0;">WHAT'S INSIDE:</p>
       <table style="width:100%;border-collapse:collapse;">
-        <tr><td style="padding:8px 0;border-bottom:1px solid #1a1a1a;font-size:13px;color:#555555;"><span style="color:#e8ff00;margin-right:12px;">01</span>The Brief — what we had to work with</td></tr>
-        <tr><td style="padding:8px 0;border-bottom:1px solid #1a1a1a;font-size:13px;color:#555555;"><span style="color:#e8ff00;margin-right:12px;">02</span>The Ad — exact commercial structure and script</td></tr>
-        <tr><td style="padding:8px 0;border-bottom:1px solid #1a1a1a;font-size:13px;color:#555555;"><span style="color:#e8ff00;margin-right:12px;">03</span>The Targeting — audience build and platform choice</td></tr>
-        <tr><td style="padding:8px 0;border-bottom:1px solid #1a1a1a;font-size:13px;color:#555555;"><span style="color:#e8ff00;margin-right:12px;">04</span>The Tracking — how we traced every lead</td></tr>
-        <tr><td style="padding:8px 0;border-bottom:1px solid #1a1a1a;font-size:13px;color:#555555;"><span style="color:#e8ff00;margin-right:12px;">05</span>The Results — £7.25 CPL, 27 leads, 30 days</td></tr>
-        <tr><td style="padding:8px 0;font-size:13px;color:#555555;"><span style="color:#e8ff00;margin-right:12px;">06</span>6 Warning Signs Your Agency Isn't Doing Their Job</td></tr>
+        <tr><td style="padding:8px 0;border-bottom:1px solid #1a1a1a;font-size:13px;color:#555555;"><span style="color:#e8ff00;margin-right:12px;">01</span>Platform Decision — Google vs Meta vs TikTok for your specific niche</td></tr>
+        <tr><td style="padding:8px 0;border-bottom:1px solid #1a1a1a;font-size:13px;color:#555555;"><span style="color:#e8ff00;margin-right:12px;">02</span>Campaign Architecture — the structure that scales</td></tr>
+        <tr><td style="padding:8px 0;border-bottom:1px solid #1a1a1a;font-size:13px;color:#555555;"><span style="color:#e8ff00;margin-right:12px;">03</span>Conversion Tracking — how to trace every lead to its exact source</td></tr>
+        <tr><td style="padding:8px 0;border-bottom:1px solid #1a1a1a;font-size:13px;color:#555555;"><span style="color:#e8ff00;margin-right:12px;">04</span>48-Hour Health Check — UK benchmark CPL table by industry</td></tr>
+        <tr><td style="padding:8px 0;border-bottom:1px solid #1a1a1a;font-size:13px;color:#555555;"><span style="color:#e8ff00;margin-right:12px;">05</span>The Case Study — 27 leads, £200 spend, £7.25 CPL. Every detail.</td></tr>
+        <tr><td style="padding:8px 0;font-size:13px;color:#555555;"><span style="color:#e8ff00;margin-right:12px;">06</span>10-Question Agency Audit — use it to evaluate any agency (including us)</td></tr>
       </table>
     </div>
 
@@ -86,7 +94,7 @@ export async function POST(request: NextRequest) {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${apiKey}`,
       },
-      body: JSON.stringify({ from, to: email.trim(), subject: "The £200 Lead System — your playbook is here", html }),
+      body: JSON.stringify({ from, to: email.trim(), subject: "The Acquisition Engine Playbook — yours now", html }),
     })
 
     if (!res.ok) {

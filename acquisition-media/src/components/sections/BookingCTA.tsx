@@ -9,9 +9,9 @@ import { openCalendly } from '@/lib/calendly';
 gsap.registerPlugin(ScrollTrigger);
 
 const headlineLines: { text: string; color: string }[] = [
-  { text: 'READY TO STOP', color: '#f0f0f0' },
-  { text: 'GUESSING AND', color: '#f0f0f0' },
-  { text: 'START GROWING?', color: '#e8ff00' },
+  { text: 'YOUR NEXT CLIENT', color: '#f0f0f0' },
+  { text: 'IS SEARCHING', color: '#f0f0f0' },
+  { text: 'RIGHT NOW.', color: '#e8ff00' },
 ];
 
 export default function BookingCTA() {

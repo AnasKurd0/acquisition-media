@@ -102,6 +102,22 @@ const bonuses = [
     value: 'Priceless — no mechanism to recreate',
     note: `Only ${SPOTS_REMAINING} of the 4 founding spots remain`,
   },
+  {
+    num: '⑥',
+    name: 'Google Business Profile Optimisation',
+    solves: 'The fear: we\'ll be invisible on Google Maps too.',
+    body: "We fully set up and optimise your Google Business Profile — keyword-rich description, complete category structure, photo strategy, Q&A seeding, and a review request system wired into your post-booking flow. Gets you into the local 3-pack for searches in your area without spending a penny on ads. Most local businesses have a half-finished profile that actively costs them ranking. We fix it before your first ad goes live.",
+    value: '£800 market equivalent',
+    note: 'Completed in week 1 — before launch',
+  },
+  {
+    num: '⑦',
+    name: 'Video Ad Script & Creative Direction Brief',
+    solves: 'The fear: I don\'t know how to make a video ad that converts.',
+    body: "We write a full 30-second direct-response video script for your business — hook, problem, social proof, offer, CTA. Plus a shot-by-shot creative direction brief: what to film, where, how long each clip, what to say on camera. You show up on the day of filming. The strategy, the script, the direction — already done. Standalone, agencies charge £1,500+ for this. It's yours before we launch.",
+    value: '£1,500 market equivalent',
+    note: 'Delivered with your launch pack',
+  },
 ]
 
 export default function GrandSlamOffer() {
@@ -329,7 +345,7 @@ export default function GrandSlamOffer() {
         <div style={{ borderTop: '1px solid #1a1a1a', paddingTop: '48px' }}>
           <div style={{ textAlign: 'center', marginBottom: '40px' }}>
             <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.2em', color: '#e8ff00', textTransform: 'uppercase', marginBottom: '8px' }}>
-              5 FOUNDING CLIENT BONUSES — {SPOTS_REMAINING} SPOTS ONLY:
+              7 FOUNDING CLIENT BONUSES — {SPOTS_REMAINING} SPOTS ONLY:
             </p>
             <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#555555', fontSize: '0.875rem', lineHeight: 1.6, maxWidth: '580px', margin: '0 auto' }}>
               Each bonus exists to dissolve one specific fear. We thought through every objection you might have — and decided to eliminate all of them.
@@ -368,8 +384,8 @@ export default function GrandSlamOffer() {
           {/* Bonus total + grand total */}
           <div style={{ display: 'grid', gap: '2px', background: '#1a1a1a' }} className="gso-totals-grid">
             <div style={{ background: '#0d0d0d', padding: '20px 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '8px' }}>
-              <span style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#555555', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' }}>Founding bonus value (5 bonuses)</span>
-              <span style={{ fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif", fontSize: '1.5rem', color: '#f0f0f0' }}>£7,900+ (+ priceless)</span>
+              <span style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#555555', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' }}>Founding bonus value (7 bonuses)</span>
+              <span style={{ fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif", fontSize: '1.5rem', color: '#f0f0f0' }}>£10,200+ (+ priceless)</span>
             </div>
             <div style={{ background: '#060606', padding: '24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px', border: '1px solid #e8ff00' }}>
               <div>
@@ -380,7 +396,7 @@ export default function GrandSlamOffer() {
                   Founding clients access this at 40% below standard market rate — permanently locked.
                 </p>
               </div>
-              <span style={{ fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif", fontSize: 'clamp(2rem, 4vw, 3rem)', color: '#e8ff00', flexShrink: 0 }}>£93,900+</span>
+              <span style={{ fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif", fontSize: 'clamp(2rem, 4vw, 3rem)', color: '#e8ff00', flexShrink: 0 }}>£96,200+</span>
             </div>
           </div>
         </div>

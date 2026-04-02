@@ -6,6 +6,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
+// NOTE: headline updated — removed "Early" which signals inexperience to cold traffic
+
 const stats = [
   { value: '27', label: 'Qualified leads', sub: 'In the first 30 days. £200 ad spend.' },
   { value: '£7.25', label: 'Cost per lead', sub: 'Meta Ads, residential & commercial cleaning' },
@@ -94,8 +96,8 @@ export default function SocialProof() {
           CLIENT RESULTS
         </p>
         <h2 style={{ fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif", fontSize: 'clamp(40px, 6vw, 80px)', lineHeight: 1.05, margin: '0 0 64px 0' }}>
-          <span style={{ color: '#f0f0f0', display: 'block' }}>Early work.</span>
-          <span style={{ color: '#e8ff00', display: 'block' }}>Real results.</span>
+          <span style={{ color: '#f0f0f0', display: 'block' }}>The proof.</span>
+          <span style={{ color: '#e8ff00', display: 'block' }}>Real numbers.</span>
         </h2>
 
         {/* Stats strip */}

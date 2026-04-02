@@ -80,7 +80,7 @@ export default function Guarantee() {
         }}
       >
           <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.2em', color: '#555555', textTransform: 'uppercase', margin: '0 0 20px 0' }}>
-            THREE GUARANTEES. IN WRITING.
+            FIVE GUARANTEES. IN WRITING.
           </p>
         <h2
           style={{
@@ -327,6 +327,96 @@ export default function Guarantee() {
               }}
             >
               No clauses. No minimum spend threshold. No questions. Full refund. We are confident enough in the process that we do not need to trap you in it.
+            </p>
+          </div>
+
+          {/* Competitor Exclusivity Guarantee */}
+          <div
+            style={{
+              marginTop: '28px',
+              borderTop: '1px solid #1a1a1a',
+              paddingTop: '24px',
+            }}
+          >
+            <span
+              style={{
+                display: 'inline-block',
+                border: '1px solid #e8ff00',
+                color: '#e8ff00',
+                padding: '5px 14px',
+                fontSize: '11px',
+                fontWeight: 700,
+                letterSpacing: '0.2em',
+                fontFamily: 'var(--font-inter), Inter, sans-serif',
+                marginBottom: '14px',
+              }}
+            >
+              COMPETITOR EXCLUSIVITY GUARANTEE
+            </span>
+            <p
+              style={{
+                color: '#f0f0f0',
+                fontSize: '1rem',
+                lineHeight: 1.7,
+                margin: '0 0 8px 0',
+              }}
+            >
+              We will never take a direct competitor as a client while you are active with us. One business per niche, per area. Written into your contract.
+            </p>
+            <p
+              style={{
+                color: '#555555',
+                fontSize: '0.875rem',
+                lineHeight: 1.65,
+                margin: 0,
+              }}
+            >
+              You do not compete for our attention — and your competitors cannot buy the same advantage. If a direct competitor approaches us, we decline and tell you about it.
+            </p>
+          </div>
+
+          {/* Data Ownership Guarantee */}
+          <div
+            style={{
+              marginTop: '28px',
+              borderTop: '1px solid #1a1a1a',
+              paddingTop: '24px',
+            }}
+          >
+            <span
+              style={{
+                display: 'inline-block',
+                border: '1px solid #e8ff00',
+                color: '#e8ff00',
+                padding: '5px 14px',
+                fontSize: '11px',
+                fontWeight: 700,
+                letterSpacing: '0.2em',
+                fontFamily: 'var(--font-inter), Inter, sans-serif',
+                marginBottom: '14px',
+              }}
+            >
+              FULL DATA OWNERSHIP GUARANTEE
+            </span>
+            <p
+              style={{
+                color: '#f0f0f0',
+                fontSize: '1rem',
+                lineHeight: 1.7,
+                margin: '0 0 8px 0',
+              }}
+            >
+              Your ad accounts, your website, your tracking data — all in your name, always. If you leave tomorrow, you walk away with everything we built.
+            </p>
+            <p
+              style={{
+                color: '#555555',
+                fontSize: '0.875rem',
+                lineHeight: 1.65,
+                margin: 0,
+              }}
+            >
+              No hostage accounts. No ransom fees. No &ldquo;we own the website until you pay the exit fee.&rdquo; Within 24 hours of any request, every account transfers to you — no conditions, no delays.
             </p>
           </div>
 

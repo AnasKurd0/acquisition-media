@@ -7,26 +7,47 @@ import { openCalendly } from '@/lib/calendly'
 
 gsap.registerPlugin(ScrollTrigger)
 
-// Set NEXT_PUBLIC_VSL_VIDEO_ID in .env.local once you have a YouTube video ID
 const VSL_VIDEO_ID = process.env.NEXT_PUBLIC_VSL_VIDEO_ID || ''
+
+type PlayState = 'idle' | 'muted' | 'playing'
 
 export default function VSLSection() {
   const sectionRef = useRef<HTMLElement>(null)
   const wrapperRef = useRef<HTMLDivElement>(null)
-  const [playing, setPlaying] = useState(false)
+  const [state, setState] = useState<PlayState>('idle')
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      if (wrapperRef.current) {
-        gsap.fromTo(
-          wrapperRef.current,
-          { y: 40, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.9, ease: 'power3.out', scrollTrigger: { trigger: wrapperRef.current, start: 'top 75%', once: true } }
-        )
-      }
+      if (!wrapperRef.current) return
+
+      gsap.fromTo(
+        wrapperRef.current,
+        { scale: 0.88, opacity: 0, y: 20 },
+        {
+          scale: 1,
+          opacity: 1,
+          y: 0,
+          duration: 1.1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: wrapperRef.current,
+            start: 'top 70%',
+            once: true,
+            onEnter: () => {
+              if (VSL_VIDEO_ID) {
+                // Small delay so the scale animation finishes first
+                setTimeout(() => setState('muted'), 700)
+              }
+            },
+          },
+        }
+      )
     }, sectionRef)
     return () => ctx.revert()
   }, [])
+
+  const mutedSrc = `https://www.youtube.com/embed/${VSL_VIDEO_ID}?autoplay=1&mute=1&rel=0&modestbranding=1&controls=0`
+  const playingSrc = `https://www.youtube.com/embed/${VSL_VIDEO_ID}?autoplay=1&rel=0&modestbranding=1`
 
   return (
     <section
@@ -51,35 +72,135 @@ export default function VSLSection() {
         </div>
 
         {/* Video container */}
-        <div ref={wrapperRef} style={{ opacity: 0 }}>
-          <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden', border: '1px solid #1a1a1a' }}>
-            {VSL_VIDEO_ID && playing ? (
-              <iframe
-                src={`https://www.youtube.com/embed/${VSL_VIDEO_ID}?autoplay=1&rel=0&modestbranding=1`}
-                title="Acquisition Media — Why most ad spend is wasted"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }}
-              />
-            ) : (
+        <div
+          ref={wrapperRef}
+          style={{ opacity: 0, transformOrigin: 'center center' }}
+        >
+          <div
+            style={{
+              position: 'relative',
+              paddingBottom: '56.25%',
+              height: 0,
+              overflow: 'hidden',
+              border: '1px solid #1a1a1a',
+              background: '#0a0a0a',
+            }}
+          >
+            {/* Idle — play button */}
+            {state === 'idle' && (
               <button
                 type="button"
-                onClick={() => VSL_VIDEO_ID ? setPlaying(true) : openCalendly()}
-                style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', background: '#0a0a0a', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: '20px' }}
+                onClick={() => VSL_VIDEO_ID ? setState('playing') : openCalendly()}
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  width: '100%',
+                  height: '100%',
+                  background: 'transparent',
+                  border: 'none',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexDirection: 'column',
+                  gap: '20px',
+                }}
                 aria-label="Play video"
               >
                 <div
                   className="vsl-play-btn"
-                  style={{ width: '80px', height: '80px', borderRadius: '50%', background: '#e8ff00', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'transform 0.25s ease, box-shadow 0.25s ease' }}
+                  style={{
+                    width: '80px',
+                    height: '80px',
+                    borderRadius: '50%',
+                    background: '#e8ff00',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    transition: 'transform 0.25s ease, box-shadow 0.25s ease',
+                  }}
                 >
                   <svg width="30" height="30" viewBox="0 0 24 24" fill="#060606">
                     <path d="M8 5v14l11-7z" />
                   </svg>
                 </div>
-                <span style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#555555', fontSize: '0.8125rem', letterSpacing: '0.1em', fontWeight: 600, textTransform: 'uppercase' }}>
+                <span
+                  style={{
+                    fontFamily: 'var(--font-inter), Inter, sans-serif',
+                    color: '#555555',
+                    fontSize: '0.8125rem',
+                    letterSpacing: '0.1em',
+                    fontWeight: 600,
+                    textTransform: 'uppercase',
+                  }}
+                >
                   {VSL_VIDEO_ID ? 'Play — 4 minutes' : 'Video coming soon'}
                 </span>
               </button>
+            )}
+
+            {/* Muted autoplay — with unmute overlay */}
+            {state === 'muted' && VSL_VIDEO_ID && (
+              <>
+                <iframe
+                  src={mutedSrc}
+                  title="Acquisition Media — Why most ad spend is wasted"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }}
+                />
+                {/* Unmute bar */}
+                <button
+                  type="button"
+                  onClick={() => setState('playing')}
+                  aria-label="Unmute video"
+                  style={{
+                    position: 'absolute',
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    background: 'rgba(6,6,6,0.88)',
+                    border: 'none',
+                    borderTop: '1px solid #1a1a1a',
+                    padding: '14px 24px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '12px',
+                    cursor: 'pointer',
+                    transition: 'background 0.2s',
+                  }}
+                  onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.background = 'rgba(232,255,0,0.1)' }}
+                  onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.background = 'rgba(6,6,6,0.88)' }}
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e8ff00" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" />
+                  </svg>
+                  <span
+                    style={{
+                      fontFamily: 'var(--font-inter), Inter, sans-serif',
+                      color: '#e8ff00',
+                      fontSize: '0.75rem',
+                      fontWeight: 700,
+                      letterSpacing: '0.12em',
+                    }}
+                  >
+                    CLICK TO UNMUTE
+                  </span>
+                </button>
+              </>
+            )}
+
+            {/* Unmuted — full player */}
+            {state === 'playing' && VSL_VIDEO_ID && (
+              <iframe
+                src={playingSrc}
+                title="Acquisition Media — Why most ad spend is wasted"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }}
+              />
             )}
           </div>
         </div>
@@ -90,7 +211,18 @@ export default function VSLSection() {
             type="button"
             onClick={openCalendly}
             className="vsl-cta"
-            style={{ background: 'transparent', color: '#f0f0f0', border: '1px solid #1a1a1a', padding: '14px 32px', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.1em', cursor: 'pointer', fontFamily: 'var(--font-inter), Inter, sans-serif', transition: 'border-color 0.2s ease, color 0.2s ease' }}
+            style={{
+              background: 'transparent',
+              color: '#f0f0f0',
+              border: '1px solid #1a1a1a',
+              padding: '14px 32px',
+              fontSize: '0.875rem',
+              fontWeight: 700,
+              letterSpacing: '0.1em',
+              cursor: 'pointer',
+              fontFamily: 'var(--font-inter), Inter, sans-serif',
+              transition: 'border-color 0.2s ease, color 0.2s ease',
+            }}
             onMouseEnter={(e) => { const b = e.currentTarget as HTMLButtonElement; b.style.borderColor = '#e8ff00'; b.style.color = '#e8ff00' }}
             onMouseLeave={(e) => { const b = e.currentTarget as HTMLButtonElement; b.style.borderColor = '#1a1a1a'; b.style.color = '#f0f0f0' }}
           >

@@ -1,6 +1,7 @@
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import Hero from '@/components/sections/Hero'
+import InlineLeadCapture from '@/components/sections/InlineLeadCapture'
 import Marquee from '@/components/sections/Marquee'
 import TheProblem from '@/components/sections/TheProblem'
 import PerfectFor from '@/components/sections/PerfectFor'
@@ -24,6 +25,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <InlineLeadCapture />
         <Marquee />
         <TheProblem />
         <PerfectFor />
