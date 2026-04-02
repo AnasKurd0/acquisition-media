@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { CALENDLY_URL } from '@/lib/calendly'
+import { trackEvent } from '@/lib/analytics'
 
 function CalendlyEmbed() {
   const embedRef = useRef<HTMLDivElement>(null)
@@ -13,7 +14,11 @@ function CalendlyEmbed() {
     // own "continue to site?" dialog entirely
     function handleMessage(e: MessageEvent) {
       if (typeof e.data === 'object' && e.data?.event === 'calendly.event_scheduled') {
-        window.location.href = '/thank-you'
+        const inviteeUri = (e.data as { payload?: { invitee?: { uri?: string } } })?.payload?.invitee?.uri
+        const dest = inviteeUri
+          ? `/thank-you?iu=${encodeURIComponent(inviteeUri)}`
+          : '/thank-you'
+        window.location.href = dest
       }
     }
     window.addEventListener('message', handleMessage)
@@ -60,6 +65,10 @@ function CalendlyEmbed() {
 }
 
 export default function BookPage() {
+  useEffect(() => {
+    trackEvent('begin_checkout', { event_category: 'booking_intent' })
+  }, [])
+
   return (
     <div style={{ background: '#060606', minHeight: '100vh', paddingTop: '100px', paddingBottom: '80px', paddingLeft: '24px', paddingRight: '24px' }}>
       <div style={{ maxWidth: '1100px', margin: '0 auto' }}>

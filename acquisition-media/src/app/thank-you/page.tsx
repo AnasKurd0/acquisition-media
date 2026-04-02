@@ -1,33 +1,79 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { TrackBooking } from '@/components/ui/TrackBooking'
 
 export const metadata: Metadata = {
   title: "You're Booked — Acquisition Media",
-  description: 'Your strategy call is confirmed. Here\'s what to expect.',
+  description: "Your strategy call is confirmed. Here's what to expect.",
   robots: { index: false, follow: false },
 }
 
-const steps = [
-  {
-    num: '01',
-    title: 'Check your inbox',
-    body: 'A calendar invite is on its way. Check your spam folder if you don\'t see it within 5 minutes.',
-  },
-  {
-    num: '02',
-    title: 'We\'ll prepare before the call',
-    body: 'We\'ll review your website, your market, and your top competitors before we speak — so we come with insight, not questions.',
-  },
-  {
-    num: '03',
-    title: 'The call itself',
-    body: 'No slides. No scripts. We audit your current setup live, identify your fastest path to leads, and build your growth plan on the call. You leave with it in writing.',
-  },
-]
+interface BookingDetails {
+  name: string
+  startTime: string
+}
 
-export default function ThankYouPage() {
+async function fetchBookingDetails(inviteeUri: string): Promise<BookingDetails | null> {
+  const token = process.env.CALENDLY_API_TOKEN
+  if (!token) return null
+  try {
+    const eventUri = inviteeUri.replace(/\/invitees\/[^/]+$/, '')
+    const [invRes, evRes] = await Promise.all([
+      fetch(inviteeUri, { headers: { Authorization: `Bearer ${token}` }, cache: 'no-store' }),
+      fetch(eventUri, { headers: { Authorization: `Bearer ${token}` }, cache: 'no-store' }),
+    ])
+    if (!invRes.ok || !evRes.ok) return null
+    const { resource: inv } = await invRes.json() as { resource: { name: string } }
+    const { resource: ev } = await evRes.json() as { resource: { start_time: string } }
+    return { name: inv.name, startTime: ev.start_time }
+  } catch {
+    return null
+  }
+}
+
+function formatCallTime(iso: string) {
+  return new Date(iso).toLocaleString('en-GB', {
+    weekday: 'long',
+    day: 'numeric',
+    month: 'long',
+    hour: '2-digit',
+    minute: '2-digit',
+    timeZone: 'Europe/London',
+    timeZoneName: 'short',
+  })
+}
+
+export default async function ThankYouPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ iu?: string }>
+}) {
+  const params = await searchParams
+  const booking = params.iu ? await fetchBookingDetails(decodeURIComponent(params.iu)) : null
+
+  const firstName = booking?.name?.split(' ')[0] ?? null
+
+  const steps = [
+    {
+      num: '01',
+      title: 'Check your inbox',
+      body: 'A calendar invite from Calendly is on its way — it has your call date, time, and join link. Check spam if you don\'t see it within 5 minutes.',
+    },
+    {
+      num: '02',
+      title: "We'll prepare before the call",
+      body: "We'll review your website, your market, and your top competitors before we speak — so we come with insight, not questions.",
+    },
+    {
+      num: '03',
+      title: 'The call itself',
+      body: "No slides. No scripts. We audit your current setup live, identify your fastest path to leads, and build your growth plan on the call. You leave with it in writing.",
+    },
+  ]
+
   return (
     <div style={{ background: '#060606', minHeight: '100vh', paddingTop: '100px', paddingBottom: '120px', paddingLeft: '24px', paddingRight: '24px' }}>
+      <TrackBooking />
       <div style={{ maxWidth: '680px', margin: '0 auto' }}>
 
         {/* Confirmation badge */}
@@ -39,11 +85,31 @@ export default function ThankYouPage() {
         </div>
 
         {/* Headline */}
-        <h1 style={{ fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif", fontSize: 'clamp(56px, 8vw, 104px)', lineHeight: 1.0, margin: '0 0 20px 0' }}>
-          <span style={{ color: '#f0f0f0', display: 'block' }}>You&apos;re in.</span>
+        <h1 style={{ fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif", fontSize: 'clamp(56px, 8vw, 104px)', lineHeight: 1.0, margin: '0 0 24px 0' }}>
+          {firstName ? (
+            <>
+              <span style={{ color: '#f0f0f0', display: 'block' }}>{"You're in,"}</span>
+              <span style={{ color: '#e8ff00', display: 'block' }}>{firstName}.</span>
+            </>
+          ) : (
+            <span style={{ color: '#f0f0f0', display: 'block' }}>{"You're in."}</span>
+          )}
         </h1>
+
+        {/* Call time box — shown when Calendly API returns data */}
+        {booking && (
+          <div style={{ borderLeft: '3px solid #e8ff00', background: '#0d0d0d', padding: '16px 20px', marginBottom: '32px', display: 'inline-block' }}>
+            <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.15em', color: '#555555', textTransform: 'uppercase', margin: '0 0 4px 0' }}>
+              Your call is confirmed for
+            </p>
+            <p style={{ fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif", fontSize: '1.375rem', color: '#e8ff00', letterSpacing: '0.04em', margin: 0 }}>
+              {formatCallTime(booking.startTime)}
+            </p>
+          </div>
+        )}
+
         <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#555555', fontSize: '1.0625rem', lineHeight: 1.75, margin: '0 0 64px 0' }}>
-          The call is locked in. Here&apos;s exactly what happens next.
+          {"Here's exactly what happens next."}
         </p>
 
         {/* Steps */}
@@ -77,7 +143,7 @@ export default function ThankYouPage() {
             READ THE PLAYBOOK
           </h3>
           <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#555555', fontSize: '0.875rem', lineHeight: 1.7, margin: '0 0 20px 0' }}>
-            The exact 3-step framework we use to fill calendars for local service businesses. Read it before the call and you&apos;ll get twice as much from the session.
+            {"The exact 3-step framework we use to fill calendars for local service businesses. Read it before the call and you'll get twice as much from the session."}
           </p>
           <Link
             href="/playbook"

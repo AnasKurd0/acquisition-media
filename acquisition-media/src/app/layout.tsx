@@ -100,6 +100,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
         </SmoothScrollProvider>
         <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="afterInteractive" />
+        {process.env.NEXT_PUBLIC_GA4_ID && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA4_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="ga4-init" strategy="afterInteractive">{`
+              window.dataLayer=window.dataLayer||[];
+              function gtag(){dataLayer.push(arguments)}
+              gtag('js',new Date());
+              gtag('config','${process.env.NEXT_PUBLIC_GA4_ID}');
+            `}</Script>
+          </>
+        )}
       </body>
     </html>
   )

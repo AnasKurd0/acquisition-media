@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { trackEvent } from '@/lib/analytics'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -52,6 +53,7 @@ export default function LeadMagnet() {
     }
     setLoading(false)
     setSubmitted(true)
+    trackEvent('generate_lead', { event_category: 'lead_magnet', method: 'playbook_form' })
   }
 
   return (
