@@ -234,7 +234,7 @@ export default function Hero() {
             What&apos;s in the offer:
           </p>
           <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#f0f0f0', fontSize: '0.8125rem', lineHeight: 1.6, margin: '0 0 10px 0' }}>
-            Custom website · Google Ads · Meta Ads · Conversion tracking · Weekly reports · Direct founder access · 3 written guarantees · Month-to-month after 90 days
+            Custom website · Google Ads · Meta Ads · Conversion tracking · Weekly reports · Direct founder access · 5 written guarantees · Month-to-month after 90 days
           </p>
           <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#e8ff00', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.08em', margin: 0 }}>
             ★ {SPOTS_REMAINING} founding spots: permanently 40% below market rate + 3 exclusive bonuses
@@ -300,7 +300,7 @@ export default function Hero() {
             opacity: 0,
           }}
         >
-          {['✓ Google + Meta Ads', '✓ Custom Website', '✓ First Lead in 48 Hours', '✓ 3 Written Guarantees', '✓ Max 4 Clients — Never Line 83'].map((item) => (
+          {['✓ Google + Meta Ads', '✓ Custom Website', '✓ First Lead in 48 Hours', '✓ 5 Written Guarantees', '✓ Max 4 Clients — Never Line 83'].map((item) => (
             <span
               key={item}
               style={{

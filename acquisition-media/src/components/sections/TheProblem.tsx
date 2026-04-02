@@ -16,27 +16,27 @@ interface PainPoint {
 const PAIN_POINTS: PainPoint[] = [
   {
     number: '01',
-    title: 'THEY BUILT YOU A PRETTY WEBSITE. THEN LEFT.',
+    title: "YOU DON'T KNOW WHERE YOUR NEXT CLIENT IS COMING FROM.",
     description:
-      "A site that looks good but loads slow, isn't built for SEO, and has no booking system. Looks = vanity. Conversions = the goal.",
+      "Some months you are turning work away. Others you are chasing invoices and wondering where the pipeline went. There is no system — only luck dressed as momentum. You cannot scale what you cannot predict.",
   },
   {
     number: '02',
-    title: 'THEIR ADS SPENT YOUR BUDGET. THEN BLAMED THE MARKET.',
+    title: 'YOUR BEST CLIENTS FOUND YOU BY ACCIDENT.',
     description:
-      'Generic targeting. No testing. Monthly PDFs full of graphs that say nothing. Your budget was their salary, not your results.',
+      "Referrals. Word of mouth. Someone who knew someone. The people who need you most are searching Google right now — and finding your competitors instead. 97% of buyers research online before contacting anyone. Most local businesses are invisible where it counts.",
   },
   {
     number: '03',
-    title: 'THEY LOCKED YOU INTO 12 MONTHS. THEN UNDERDELIVERED.',
+    title: "YOUR GROWTH DEPENDS ON WHO YOU KNOW, NOT HOW GOOD YOU ARE.",
     description:
-      "By the time you realised it wasn't working, you were 7 months into a contract you couldn't exit.",
+      "You are exceptional at what you do. But the best business in your market is not winning — the most visible one is. Visibility is a system. Right now, you do not have one. You have a reputation. It does not compound on its own.",
   },
   {
     number: '04',
-    title: "YOU'VE NEVER SPOKEN TO THE PERSON RUNNING YOUR CAMPAIGNS.",
+    title: "EVERY POUND YOU'VE SPENT ON MARKETING FELT LIKE A GAMBLE.",
     description:
-      "The senior who pitched you moved on. Your account is now line 83 on a junior's list. You email 'the team'. You wait days. Your budget keeps spending.",
+      "You have tried something — ads, a website, maybe an agency. The money left. The uncertainty stayed. You have no idea which action drove the leads you did get, which means you cannot repeat it. That is not a marketing problem. That is a measurement problem.",
   },
 ]
 

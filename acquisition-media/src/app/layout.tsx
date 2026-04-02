@@ -9,6 +9,7 @@ import { AnnouncementBar } from '@/components/layout/AnnouncementBar'
 import { MobileStickyBar } from '@/components/ui/MobileStickyBar'
 import { ExitIntent } from '@/components/ui/ExitIntent'
 import { WhatsAppButton } from '@/components/ui/WhatsAppButton'
+import { EntryModal } from '@/components/ui/EntryModal'
 
 const bebasNeue = Bebas_Neue({
   weight: '400',
@@ -101,6 +102,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <CustomCursor />
           {children}
         </SmoothScrollProvider>
+        <EntryModal />
         <ExitIntent />
         <WhatsAppButton />
         <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="afterInteractive" />
