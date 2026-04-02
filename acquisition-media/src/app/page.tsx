@@ -3,6 +3,7 @@ import { Footer } from '@/components/layout/Footer'
 import Hero from '@/components/sections/Hero'
 import Marquee from '@/components/sections/Marquee'
 import TheProblem from '@/components/sections/TheProblem'
+import VSLSection from '@/components/sections/VSLSection'
 import PerfectFor from '@/components/sections/PerfectFor'
 import Services from '@/components/sections/Services'
 import SocialProof from '@/components/sections/SocialProof'
@@ -13,6 +14,7 @@ import ComparisonTable from '@/components/sections/ComparisonTable'
 import WhyUs from '@/components/sections/WhyUs'
 import Guarantee from '@/components/sections/Guarantee'
 import GrandSlamOffer from '@/components/sections/GrandSlamOffer'
+import FounderSection from '@/components/sections/FounderSection'
 import BookingCTA from '@/components/sections/BookingCTA'
 import LeadMagnet from '@/components/sections/LeadMagnet'
 import FAQ from '@/components/sections/FAQ'
@@ -32,11 +34,13 @@ export default function Home() {
         <ROICalculator />
         <BenchmarkStats />
         <TheProblem />
+        <VSLSection />
         <WhyUs />
         <ComparisonTable />
         <Guarantee />
         <FAQ />
         <GrandSlamOffer />
+        <FounderSection />
         <BookingCTA />
         <LeadMagnet />
         <FooterCTA />

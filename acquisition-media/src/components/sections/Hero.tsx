@@ -279,7 +279,7 @@ export default function Hero() {
             opacity: 0,
           }}
         >
-          {['✓ Google Certified', '✓ Meta Certified', '✓ TikTok Certified', '✓ 90-Day Guarantee'].map((item) => (
+          {['✓ 90-Day Results Guarantee', '✓ First Lead in 48 Hours', '✓ No Lock-In Contract', '✓ Direct Founder Access'].map((item) => (
             <span
               key={item}
               style={{

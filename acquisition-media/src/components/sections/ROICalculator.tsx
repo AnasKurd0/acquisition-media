@@ -106,29 +106,29 @@ function ResultRow({ label, value, accent, large, isLast }: ResultRowProps) {
 }
 
 const industryPresets = [
-  { label: 'Dental', adSpend: 2500, conversionRate: 25, clientValue: 3500 },
-  { label: 'Legal', adSpend: 3500, conversionRate: 15, clientValue: 6000 },
-  { label: 'Trades', adSpend: 1800, conversionRate: 30, clientValue: 2000 },
-  { label: 'Wellness', adSpend: 2000, conversionRate: 20, clientValue: 1200 },
+  { label: 'Dental', adSpend: 2500, conversionRate: 25, clientValue: 3500, cpl: 20 },
+  { label: 'Legal', adSpend: 3500, conversionRate: 15, clientValue: 6000, cpl: 30 },
+  { label: 'Trades', adSpend: 1800, conversionRate: 30, clientValue: 2000, cpl: 8 },
+  { label: 'Wellness', adSpend: 2000, conversionRate: 20, clientValue: 1200, cpl: 15 },
 ];
 
 export default function ROICalculator() {
-  const [adSpend, setAdSpend] = useState(2500);
+  const [adSpend, setAdSpend] = useState(1500);
   const [conversionRate, setConversionRate] = useState(20);
   const [clientValue, setClientValue] = useState(1500);
+  const [cpl, setCpl] = useState(7.25);
   const [activePreset, setActivePreset] = useState<string | null>(null);
 
   const leftColRef = useRef<HTMLDivElement>(null);
   const rightColRef = useRef<HTMLDivElement>(null);
 
   const { leads, clients, monthlyRevenue, annualRevenue } = useMemo(() => {
-    const cpl = 25; // UK market benchmark: £15–£45 CPL for local service businesses
     const leads = Math.round(adSpend / cpl);
     const clients = Math.round(leads * conversionRate / 100);
     const monthlyRevenue = clients * clientValue;
     const annualRevenue = monthlyRevenue * 12;
     return { leads, clients, monthlyRevenue, annualRevenue };
-  }, [adSpend, conversionRate, clientValue]);
+  }, [adSpend, conversionRate, clientValue, cpl]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -155,6 +155,7 @@ export default function ROICalculator() {
     setAdSpend(preset.adSpend);
     setConversionRate(preset.conversionRate);
     setClientValue(preset.clientValue);
+    setCpl(preset.cpl);
   };
 
   return (
@@ -218,10 +219,19 @@ export default function ROICalculator() {
               label="Monthly Ad Spend"
               value={adSpend}
               displayValue={formatCurrency(adSpend)}
-              min={1200}
+              min={500}
               max={8000}
               step={100}
               onChange={(v) => { setActivePreset(null); setAdSpend(v); }}
+            />
+            <Slider
+              label="Cost Per Lead (£)"
+              value={cpl}
+              displayValue={'£' + cpl.toFixed(2)}
+              min={3}
+              max={50}
+              step={0.25}
+              onChange={(v) => { setActivePreset(null); setCpl(v); }}
             />
             <Slider
               label="Avg. Lead-to-Client %"
@@ -256,7 +266,7 @@ export default function ROICalculator() {
               <ResultRow label="Projected annual revenue" value={formatCurrency(annualRevenue)} accent large isLast />
 
               <p style={{ color: '#555555', fontSize: '0.75rem', marginTop: '16px', fontStyle: 'italic', lineHeight: 1.5 }}>
-                CPL estimates based on UK market benchmarks (£15–£45 for local service businesses). Results vary by industry, location, and competition level.
+                Default CPL of £7.25 is based on our real campaign data — 27 qualified leads for £200 ad spend. Adjust to your industry. Results vary by niche, location, and competition.
               </p>
             </div>
 

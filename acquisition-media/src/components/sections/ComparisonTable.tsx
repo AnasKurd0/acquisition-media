@@ -8,13 +8,41 @@ import { openCalendly } from '@/lib/calendly'
 gsap.registerPlugin(ScrollTrigger)
 
 const rows = [
-  { feature: 'Pricing model', us: 'Custom quote based on your scope', them: 'Rigid packages, often hidden fees', usGood: true },
-  { feature: 'Lock-in contract', us: 'Month-to-month after 90 days', them: '6–12 month contracts', usGood: true },
-  { feature: 'Reporting', us: 'Weekly + live dashboard', them: 'Monthly PDF', usGood: true },
-  { feature: 'Guarantee', us: '90-day results or free', them: 'None', usGood: true },
-  { feature: 'Who you talk to', us: 'The person doing the work', them: 'Account manager', usGood: true },
-  { feature: 'Platforms', us: 'Google + Meta + TikTok', them: 'Usually 1–2', usGood: true },
-  { feature: 'Onboarding speed', us: 'Ads: 48h · Website: 4–6 wks', them: '4–8 weeks', usGood: true },
+  {
+    feature: "Who runs your campaigns",
+    us: "Anas — the founder. The same person you spoke to on the call.",
+    them: "Junior account exec. The senior who pitched you has moved on.",
+  },
+  {
+    feature: "When things go wrong",
+    us: "Message Anas directly. Same-day response. We absorb the cost.",
+    them: "Email the account team. Wait for next month's review. Bill stays.",
+  },
+  {
+    feature: "How to reach us",
+    us: "WhatsApp the founder. Hours, not days.",
+    them: "Email the account manager. Allow 2–3 business days.",
+  },
+  {
+    feature: "How many clients we run simultaneously",
+    us: "Maximum 4. You are never a small fish.",
+    them: "50–200+. Your account is line 83 on the client list.",
+  },
+  {
+    feature: "When your campaign goes live",
+    us: "Google Ads: 48 hours. Website: 4–6 weeks.",
+    them: "Brief → strategy → review → approval → launch. 6–10 weeks.",
+  },
+  {
+    feature: "What happens at day 90",
+    us: "Results delivered — or we waive that month's retainer and keep working.",
+    them: "Invoice sent. Results not guaranteed.",
+  },
+  {
+    feature: "After year one",
+    us: "Month-to-month. Cancel with 30 days notice. No exit fees.",
+    them: "Roll into another 12-month contract. Or pay to leave.",
+  },
 ]
 
 export default function ComparisonTable() {
@@ -66,8 +94,8 @@ export default function ComparisonTable() {
             textAlign: 'center',
           }}
         >
-          <span style={{ color: '#555555', display: 'block' }}>Why we win.</span>
-          <span style={{ color: '#f0f0f0', display: 'block' }}>On paper.</span>
+          <span style={{ color: '#555555', display: 'block' }}>You&apos;ve heard &ldquo;we&apos;re different&rdquo;</span>
+          <span style={{ color: '#f0f0f0', display: 'block' }}>before. Let&apos;s be specific.</span>
         </h2>
 
         {/* Table wrapper */}

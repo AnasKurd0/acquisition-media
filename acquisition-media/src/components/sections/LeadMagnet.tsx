@@ -12,7 +12,7 @@ const playbookSections = [
   { num: '02', title: 'The Ad', body: "The exact commercial we produced — creative direction, script structure, and what made it convert. Templates included." },
   { num: '03', title: 'The Targeting', body: "How we built the audience. Why we chose Facebook + Instagram over Google for this campaign. The settings that matter." },
   { num: '04', title: 'The Tracking', body: "How we made sure every enquiry was traced back to the ad. The one setup step most businesses skip — and how it costs them." },
-  { num: '05', title: 'The Results', body: '20+ direct WhatsApp enquiries. 30 days. $200 spend. $10 per qualified lead. What happened and why.' },
+  { num: '05', title: 'The Results', body: '27 direct WhatsApp enquiries. 30 days. £200 spend. £7.25 per qualified lead. What happened and why.' },
   { num: '06', title: '6 Warning Signs Your Agency Isn\'t Doing Their Job', body: "A checklist every business owner should have before signing any marketing contract. Red flags that cost businesses thousands." },
 ]
 
@@ -70,11 +70,11 @@ export default function LeadMagnet() {
           </p>
 
           <h2 style={{ fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif", fontSize: 'clamp(36px, 5vw, 68px)', lineHeight: 1.0, margin: '0 0 8px 0' }}>
-            <span style={{ color: '#f0f0f0', display: 'block' }}>How we got</span>
-            <span style={{ color: '#e8ff00', display: 'block' }}>20 leads for $200.</span>
+            <span style={{ color: '#f0f0f0', display: 'block' }}>27 leads.</span>
+            <span style={{ color: '#e8ff00', display: 'block' }}>£200 spend.</span>
           </h2>
           <h2 style={{ fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif", fontSize: 'clamp(22px, 3vw, 36px)', color: '#555555', lineHeight: 1.1, margin: '0 0 24px 0' }}>
-            In 30 days. The exact playbook.
+            30 days. The exact playbook.
           </h2>
 
           <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#555555', fontSize: '0.9375rem', lineHeight: 1.7, marginBottom: '32px', maxWidth: '440px' }}>
@@ -185,7 +185,7 @@ export default function LeadMagnet() {
                 Free. Apply immediately. No experience needed.
               </p>
               <span style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#e8ff00', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.1em' }}>
-                £200 SPENT → 20 LEADS
+                £200 SPENT → 27 LEADS → £7.25 CPL
               </span>
             </div>
           </div>

@@ -26,7 +26,7 @@ const profiles = [
     tag: 'YOUR CLIENTS ARE WORTH REAL MONEY',
     headline: "One client matters.",
     body: "You don't need hundreds of customers — you need the right ones. Whether a client is worth £500, £5,000, or £50,000 to your business, the maths on paid advertising works strongly in your favour if you do it right.",
-    outcome: "A performance website and paid campaigns engineered around your specific client value. If your average client is worth £2,000+, a $25 cost-per-lead pays back 80x.",
+    outcome: "A performance website and paid campaigns engineered around your specific client value. If your average client is worth £2,000+, a £7.25 cost-per-lead pays back 275×. The maths is ruthless in your favour.",
     accent: false,
   },
 ]

@@ -14,8 +14,8 @@ const coreStack = [
   { name: 'Meta Ads Management', desc: 'Facebook + Instagram. Audience build, creative direction, A/B testing, retargeting. Done for you.', value: '£800/mo' },
   { name: 'Conversion Tracking Setup', desc: 'Google Tag Manager + conversion events. Every lead traced to its exact source. You know what works.', value: '£600' },
   { name: 'Booking System Integration', desc: 'One tap from ad to calendar. No friction. No drop-off between traffic and enquiry.', value: '£400' },
-  { name: 'Weekly Reports + Live Dashboard', desc: 'Plain-English summary every week. Cost-per-lead is the only number that matters.', value: 'Included' },
-  { name: 'Direct Access — No Account Managers', desc: 'WhatsApp and email to the person running your campaigns. Response within 24 hours.', value: 'Included' },
+  { name: 'Weekly Performance Reports', desc: "Plain-English update every week. Cost-per-lead, what worked, what we're changing next. Two minutes to read. No jargon.", value: 'Included' },
+  { name: 'Direct Access to Anas', desc: 'WhatsApp and email directly to Anas — the founder running your campaigns. Response within hours, not days.', value: 'Included' },
   { name: '90-Day Results Guarantee', desc: 'Measurable improvement in lead volume or next month is free. Written into your contract before we start.', value: 'Priceless' },
   { name: 'Month-to-Month After 90 Days', desc: 'Cancel with 30 days notice. No exit fees. No 12-month lock-in. You stay because it works.', value: 'Priceless' },
 ]
@@ -23,24 +23,24 @@ const coreStack = [
 const bonuses = [
   {
     num: '①',
-    name: 'The Competitor Intelligence Dossier',
-    body: "Before we spend a penny, we audit your top 3 competitors — which platforms they're on, what creative is running, what appears to be working. You enter the market with an intelligence advantage most agencies never provide.",
-    value: '£500–£2,000 value',
-    note: 'Delivered within 7 days of onboarding',
+    name: 'The 48-Hour Launch Watch',
+    body: "For your first 48 hours live, Anas personally monitors your campaign morning and evening — every ad, every bid, every signal. Not automated. Not delegated. The person who built it, watching it deploy in real time. No agency carrying 50+ clients can do this. We can because we have 4.",
+    value: 'Cannot be bought at any price elsewhere',
+    note: 'First 48 hours of campaign launch',
   },
   {
     num: '②',
-    name: 'The 12-Month Acquisition Blueprint',
-    body: "A custom projection of your results at month 1, 3, 6, and 12 — based on your business, your market, your average client value. A roadmap built on real numbers, not industry averages.",
-    value: '£800 value',
-    note: 'Delivered at week 1 strategy call',
+    name: 'The Competitor Intelligence Sweep',
+    body: "Before your first pound is spent, we reverse-engineer your top 3 competitors — every live ad, every tested angle, every platform active. You enter the market knowing exactly what the audience has already seen, what they are bored of, and where the gap is. Most businesses never get this intelligence at all.",
+    value: '£600+ equivalent value',
+    note: 'Delivered 7 days before launch',
   },
   {
     num: '③',
-    name: 'The 30-Day Founder Review',
-    body: "Both founders personally review every ad, every headline, every targeting decision for your entire first month. Structurally impossible at a large agency. Only possible because we take 4 clients.",
-    value: 'Impossible to buy elsewhere',
-    note: 'Ongoing throughout month 1',
+    name: 'Your 90-Day Growth Roadmap (Yours to Keep)',
+    body: "On the strategy call, we build your custom 90-day plan — target CPL for your industry, projected lead volume at each spend level, which channel to start with, and the exact metrics that tell us it is working. Whether you become a client or not, this plan is yours. No strings attached.",
+    value: '£500 value — yours free',
+    note: 'Built live on the strategy call',
   },
 ]
 
@@ -90,7 +90,7 @@ export default function GrandSlamOffer() {
             <span style={{ color: '#e8ff00', display: 'block' }}>No guessing. Just growth.</span>
           </h2>
           <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#555555', fontSize: '1rem', lineHeight: 1.75, maxWidth: '600px', margin: '0 auto' }}>
-            Most agencies sell you campaigns. We build you a system. One that generates qualified leads week after week — without you thinking about it. Here is everything the four founding clients receive.
+            Most agencies sell you campaigns and disappear. We build you a system — one that compounds. Every week, the data improves. Every month, the cost-per-lead drops. Here is everything the founding clients receive.
           </p>
         </div>
 
@@ -135,7 +135,7 @@ export default function GrandSlamOffer() {
                 </p>
               </div>
               <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#555555', fontSize: '0.75rem', fontStyle: 'italic', margin: '8px 0 0 0' }}>
-                Founding clients pay significantly less than standard market rate — and that rate is locked in for the lifetime of the engagement. Exact investment discussed on the call.
+                Founding clients pay 40% below standard market rate — locked in permanently. As we scale and raise prices, founding clients stay at this rate. Exact investment confirmed on the strategy call.
               </p>
             </div>
           </div>
@@ -178,7 +178,7 @@ export default function GrandSlamOffer() {
                 NOT 4 PER MONTH. 4. EVER.
               </p>
               <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#555555', fontSize: '0.875rem', lineHeight: 1.65, margin: 0 }}>
-                These four businesses get founding rates locked in forever, direct founder access, and the three bonuses below. When they&apos;re gone, this offer closes permanently — no waitlist, no exceptions.
+                These 2 remaining businesses get founding rates locked in forever, direct founder access, and the three bonuses below. When they&apos;re gone, this offer closes permanently — no waitlist, no exceptions.
               </p>
             </div>
 
@@ -203,7 +203,7 @@ export default function GrandSlamOffer() {
         {/* Bonuses — full width */}
         <div style={{ borderTop: '1px solid #1a1a1a', paddingTop: '48px' }}>
           <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.2em', color: '#e8ff00', textTransform: 'uppercase', marginBottom: '32px', textAlign: 'center' }}>
-            FOUNDING CLIENT BONUSES — NEVER OFFERED AGAIN AFTER THESE 4 SPOTS:
+            FOUNDING CLIENT BONUSES — ONLY FOR THE REMAINING {SPOTS_REMAINING} SPOTS:
           </p>
           <div ref={bonusRef} className="gso-bonus-grid" style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '2px', background: '#1a1a1a' }}>
             {bonuses.map((b) => (

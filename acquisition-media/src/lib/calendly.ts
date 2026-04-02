@@ -11,6 +11,6 @@ export const CALENDLY_URL = process.env.NEXT_PUBLIC_CALENDLY_URL!
 
 export function openCalendly() {
   if (typeof window !== 'undefined') {
-    window.location.href = '/book'
+    window.location.href = '/qualify'
   }
 }

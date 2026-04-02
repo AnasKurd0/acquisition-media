@@ -5,11 +5,11 @@ import { MagneticButton } from '@/components/ui/MagneticButton'
 import { openCalendly } from '@/lib/calendly'
 
 const navLinks = [
-  { label: 'Services', href: '#services' },
-  { label: 'Our Process', href: '#our-process' },
-  { label: 'The Offer', href: '#grand-slam-offer' },
-  { label: 'Guarantee', href: '#guarantee' },
-  { label: 'FAQ', href: '#faq' },
+  { label: 'Services', href: '/#services' },
+  { label: 'Results', href: '/#social-proof' },
+  { label: 'The Offer', href: '/#grand-slam-offer' },
+  { label: 'Guarantee', href: '/#guarantee' },
+  { label: 'FAQ', href: '/#faq' },
 ]
 
 export function Navbar() {

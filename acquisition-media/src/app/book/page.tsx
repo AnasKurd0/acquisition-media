@@ -118,7 +118,7 @@ export default function BookPage() {
 
             {/* Trust */}
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '32px' }}>
-              {['✓ Google Certified', '✓ Meta Certified', '✓ TikTok Certified'].map((b) => (
+              {['✓ 90-Day Guarantee', '✓ No Lock-In', '✓ Direct Founder Access'].map((b) => (
                 <span key={b} style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.1em', color: '#f0f0f0', border: '1px solid #1a1a1a', padding: '4px 10px' }}>
                   {b}
                 </span>
@@ -127,7 +127,7 @@ export default function BookPage() {
 
             {/* Scarcity note */}
             <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#555555', fontSize: '0.8125rem', lineHeight: 1.65, fontStyle: 'italic' }}>
-              We&apos;re accepting 4 founding clients total. After that, standard rates apply and the bonuses close permanently.
+              2 founding spots remaining. After they fill, the founding rate and all bonuses close permanently — no waitlist, no exceptions.
             </p>
           </div>
 

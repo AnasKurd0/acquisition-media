@@ -52,7 +52,7 @@ export async function POST(request: NextRequest) {
       Hi ${firstName},
     </p>
     <p style="font-size:15px;line-height:1.75;color:#555555;margin:0 0 40px 0;">
-      Here's the exact breakdown of how we generated 20+ qualified leads for $200 in 30 days — the ad creative, targeting setup, tracking, and results. Plus the 6 red flags that tell you an agency is wasting your money.
+      Here's the exact breakdown of how we generated 27 qualified leads for £200 in 30 days — the ad creative, targeting setup, tracking, and week-by-week results. Plus the 6 red flags that tell you an agency is wasting your money.
     </p>
 
     <div style="background:#0d0d0d;border:1px solid #1a1a1a;padding:28px 32px;margin:0 0 40px 0;">
@@ -62,7 +62,7 @@ export async function POST(request: NextRequest) {
         <tr><td style="padding:8px 0;border-bottom:1px solid #1a1a1a;font-size:13px;color:#555555;"><span style="color:#e8ff00;margin-right:12px;">02</span>The Ad — exact commercial structure and script</td></tr>
         <tr><td style="padding:8px 0;border-bottom:1px solid #1a1a1a;font-size:13px;color:#555555;"><span style="color:#e8ff00;margin-right:12px;">03</span>The Targeting — audience build and platform choice</td></tr>
         <tr><td style="padding:8px 0;border-bottom:1px solid #1a1a1a;font-size:13px;color:#555555;"><span style="color:#e8ff00;margin-right:12px;">04</span>The Tracking — how we traced every lead</td></tr>
-        <tr><td style="padding:8px 0;border-bottom:1px solid #1a1a1a;font-size:13px;color:#555555;"><span style="color:#e8ff00;margin-right:12px;">05</span>The Results — $10 CPL, 20+ leads, 30 days</td></tr>
+        <tr><td style="padding:8px 0;border-bottom:1px solid #1a1a1a;font-size:13px;color:#555555;"><span style="color:#e8ff00;margin-right:12px;">05</span>The Results — £7.25 CPL, 27 leads, 30 days</td></tr>
         <tr><td style="padding:8px 0;font-size:13px;color:#555555;"><span style="color:#e8ff00;margin-right:12px;">06</span>6 Warning Signs Your Agency Isn't Doing Their Job</td></tr>
       </table>
     </div>

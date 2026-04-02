@@ -15,12 +15,12 @@ interface GridBlock {
 
 const gridBlocks: GridBlock[] = [
   {
-    title: 'THE 4-CLIENT ADVANTAGE',
-    body: "Large agencies carry 50–200+ clients. We carry 4. A founding client gets more founder attention per week than most agencies give their best clients per quarter. This is arithmetic, not a promise.",
+    title: 'THE 4-CLIENT MAXIMUM',
+    body: "Large agencies carry 50–200+ clients. We cap at 4. A founding client gets more founder attention in one week than most agencies give their best clients in a quarter. This is arithmetic, not a promise.",
   },
   {
     title: 'WE GUARANTEE WHAT THEY WON\'T',
-    body: "No 50-client agency can offer a 90-day results guarantee. Too many variables, too many clients, too little control. We can — because at 4 clients, we control enough variables to guarantee the outcome and mean it.",
+    body: "No 50-client agency can offer a 90-day results guarantee. Too many variables, too many clients, too little control. We can — because with a maximum of 4 clients, we control enough variables to guarantee the outcome and actually mean it.",
   },
   {
     title: 'WE LAUNCH IN 48 HOURS',
@@ -40,10 +40,11 @@ const gridBlocks: GridBlock[] = [
   },
 ];
 
-const certBadges = [
-  { label: 'GOOGLE ADS CERTIFIED', icon: '✓' },
-  { label: 'META BLUEPRINT CERTIFIED', icon: '✓' },
-  { label: 'TIKTOK FOR BUSINESS', icon: '✓' },
+const trustBadges = [
+  { label: '90-DAY RESULTS GUARANTEE', icon: '✓' },
+  { label: 'WRITTEN CONTRACT BEFORE WE START', icon: '✓' },
+  { label: 'MONTH-TO-MONTH AFTER 90 DAYS', icon: '✓' },
+  { label: 'DIRECT FOUNDER ACCESS', icon: '✓' },
 ];
 
 export default function WhyUs() {
@@ -166,7 +167,7 @@ export default function WhyUs() {
         ))}
       </div>
 
-      {/* Certification badges */}
+      {/* Trust badges */}
       <div
         style={{
           maxWidth: '1024px',
@@ -178,7 +179,7 @@ export default function WhyUs() {
           alignItems: 'center',
         }}
       >
-        {certBadges.map((badge) => (
+        {trustBadges.map((badge) => (
           <div
             key={badge.label}
             style={{

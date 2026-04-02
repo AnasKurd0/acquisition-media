@@ -7,6 +7,8 @@ import { CustomCursor } from '@/components/ui/CustomCursor'
 import { ScrollProgress } from '@/components/ui/ScrollProgress'
 import { AnnouncementBar } from '@/components/layout/AnnouncementBar'
 import { MobileStickyBar } from '@/components/ui/MobileStickyBar'
+import { ExitIntent } from '@/components/ui/ExitIntent'
+import { WhatsAppButton } from '@/components/ui/WhatsAppButton'
 
 const bebasNeue = Bebas_Neue({
   weight: '400',
@@ -99,7 +101,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <CustomCursor />
           {children}
         </SmoothScrollProvider>
+        <ExitIntent />
+        <WhatsAppButton />
         <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="afterInteractive" />
+        <Script id="clarity-init" strategy="afterInteractive">{`
+          (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+          })(window, document, "clarity", "script", "w5gba1wmaj");
+        `}</Script>
         {process.env.NEXT_PUBLIC_GA4_ID && (
           <>
             <Script

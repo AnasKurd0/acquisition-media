@@ -10,11 +10,12 @@ if (typeof window !== 'undefined') {
 }
 
 const checklistItems = [
-  'Weekly reporting (not monthly PDFs)',
-  'Direct access to the person doing the work',
-  'No lock-in after month 3',
-  '90-day results guarantee in writing',
-  'If we miss the target, you don\'t pay for that month',
+  'Baseline established on day 1 — lead volume, enquiry rate, or revenue benchmark',
+  'Target agreed in writing before a single pound is spent',
+  'Weekly reporting — every Monday, plain English, no graphs that say nothing',
+  'Direct access to the person doing the work — not an account manager',
+  'No lock-in after month 3 — stay because it works, not because you signed',
+  'If we miss the 90-day target, that month\'s fee is waived and we keep working',
 ];
 
 export default function Guarantee() {
@@ -169,7 +170,7 @@ export default function Guarantee() {
             That&rsquo;s not a marketing line. That&rsquo;s our contract.
           </p>
 
-          {/* Honest paragraph */}
+          {/* How it works paragraph */}
           <p
             style={{
               color: '#555555',
@@ -178,9 +179,7 @@ export default function Guarantee() {
               margin: '0 0 32px 0',
             }}
           >
-            We&rsquo;re a new agency. We don&rsquo;t have 200 client logos to show you. What
-            we have is a process that works, deep expertise, and enough
-            confidence in our system to put our work on the line.
+            On day one, we establish a written baseline — your current lead volume, enquiry rate, or revenue figure. The target is agreed before any work begins. At day 90, we measure against that baseline. No ambiguity. No moving goalposts. Either the number moved or it didn&rsquo;t.
           </p>
 
           {/* Checklist */}
@@ -294,8 +293,8 @@ export default function Guarantee() {
               lineHeight: 1.6,
             }}
           >
-            We only take 4 founding clients. That&rsquo;s not a sales tactic.
-            It&rsquo;s how we guarantee the outcome.
+            We only take 2 more founding clients. That&rsquo;s not a sales tactic.
+            It&rsquo;s precisely how we can guarantee the outcome — fewer clients means more control over each one.
           </p>
 
           {/* CTA */}

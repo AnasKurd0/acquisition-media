@@ -20,7 +20,7 @@ export const benchmarks = [
   {
     value: 5,
     suffix: 'x',
-    label: 'Average return for every $1 spent on ads',
+    label: 'Average return for every £1 spent on ads',
     source: 'Meta, 2024',
   },
 ]

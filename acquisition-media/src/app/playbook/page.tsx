@@ -39,10 +39,10 @@ const warningSigns = [
 ]
 
 const weeklyResults = [
-  { week: 'Week 1', leads: '3', spend: '$50', cpl: '~$17', note: 'Algorithm learning' },
-  { week: 'Week 2', leads: '6', spend: '$50', cpl: '$8', note: 'Optimisation kicks in' },
-  { week: 'Week 3', leads: '8', spend: '$50', cpl: '$6', note: 'Algorithm found its audience' },
-  { week: 'Week 4', leads: '5', spend: '$50', cpl: '$10', note: 'Creative fatigue — refresh needed' },
+  { week: 'Week 1', leads: '3', spend: '£50', cpl: '~£17', note: 'Algorithm learning' },
+  { week: 'Week 2', leads: '6', spend: '£50', cpl: '~£8', note: 'Optimisation kicks in' },
+  { week: 'Week 3', leads: '11', spend: '£50', cpl: '~£5', note: 'Algorithm found its audience' },
+  { week: 'Week 4', leads: '7', spend: '£50', cpl: '~£7', note: 'Creative refresh, strong finish' },
 ]
 
 const adSteps = [
@@ -82,13 +82,13 @@ export default function PlaybookPage() {
               <span style={{ color: '#e8ff00', display: 'block' }}>LEAD SYSTEM</span>
             </h1>
             <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#555555', fontSize: '1rem', lineHeight: 1.75, margin: '24px 0 40px 0', maxWidth: '580px' }}>
-              How we generated 20+ qualified leads for $200 in 30 days. The exact ad creative, targeting decisions, tracking setup, and results. No theory. No generic advice. What we actually did.
+              How we generated 27 qualified leads for £200 in 30 days. The exact ad creative, targeting decisions, tracking setup, and week-by-week results. No theory. No generic advice. Exactly what we did and why it worked.
             </p>
             <div className="pb-stat-grid">
               {[
-                { val: '$200', label: 'Total Ad Spend' },
-                { val: '20+', label: 'Qualified Leads' },
-                { val: '$10', label: 'Cost Per Lead' },
+                { val: '£200', label: 'Total Ad Spend' },
+                { val: '27', label: 'Qualified Leads' },
+                { val: '£7.25', label: 'Cost Per Lead' },
                 { val: '30', label: 'Days' },
               ].map((s) => (
                 <div key={s.label} style={{ background: '#0d0d0d', padding: '24px 20px' }}>
@@ -127,7 +127,7 @@ export default function PlaybookPage() {
                 <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.2em', color: '#e8ff00', textTransform: 'uppercase', margin: '0 0 12px 0' }}>01</p>
                 <h2 style={{ fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif", fontSize: 'clamp(32px, 4vw, 52px)', color: '#f0f0f0', letterSpacing: '0.03em', lineHeight: 1.05, margin: '0 0 24px 0' }}>THE BRIEF</h2>
                 <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#555555', fontSize: '1rem', lineHeight: 1.8, margin: '0 0 16px 0' }}>
-                  The client ran a cleaning services business. No previous ads. No existing creative. No website. Total budget: $200.
+                  The client ran a residential and commercial cleaning services business. No previous ads. No existing creative. No website. Total budget: £200.
                 </p>
                 <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#555555', fontSize: '1rem', lineHeight: 1.8, margin: '0 0 24px 0' }}>
                   Most agencies would have passed. Too small. The fundamentals were right — which is all that matters:
@@ -172,7 +172,7 @@ export default function PlaybookPage() {
                 <div className="pb-callout">
                   <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.15em', color: '#e8ff00', textTransform: 'uppercase', margin: '0 0 8px 0' }}>KEY INSIGHT</p>
                   <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#f0f0f0', fontSize: '0.9375rem', lineHeight: 1.7, margin: 0 }}>
-                    The hook determines everything. If someone doesn&apos;t stop scrolling in the first 2 seconds, your targeting, your budget, and your offer are all irrelevant. Shoot multiple hook variations. Test them. The best-performing hook on a $200 campaign is worth knowing before you spend $2,000.
+                    The hook determines everything. If someone doesn&apos;t stop scrolling in the first 2 seconds, your targeting, your budget, and your offer are all irrelevant. Shoot multiple hook variations. Test them. The best-performing hook on a £200 campaign is worth knowing before you spend £2,000.
                   </p>
                 </div>
               </div>
@@ -197,7 +197,7 @@ export default function PlaybookPage() {
                   ))}
                 </div>
                 <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#555555', fontSize: '1rem', lineHeight: 1.8, margin: '0 0 24px 0' }}>
-                  For this campaign, we chose Meta. $200 wasn&apos;t enough to compete on Google in a competitive local market. The creative was strong enough to create desire. WhatsApp as a CTA fits Meta&apos;s user behaviour perfectly.
+                  For this campaign, we chose Meta. £200 wasn&apos;t enough to compete on Google in a competitive local market. The creative was strong enough to create desire. WhatsApp as a CTA fits Meta&apos;s user behaviour perfectly.
                 </p>
                 <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#f0f0f0', fontSize: '0.875rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', margin: '0 0 16px 0' }}>The exact audience:</p>
                 <ul style={{ listStyle: 'none', margin: '0 0 24px 0', padding: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
@@ -253,7 +253,7 @@ export default function PlaybookPage() {
                   ))}
                 </div>
                 <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#555555', fontSize: '0.9375rem', lineHeight: 1.75, margin: '24px 0 0 0', fontStyle: 'italic' }}>
-                  This single change is why our $10 CPL was achievable. Most businesses running the same ad without this setup are paying $40–80+ per lead without knowing it.
+                  This single setup step is why our £7.25 CPL was achievable. Most businesses running the same ad without proper conversion tracking are paying £35–80+ per lead without ever knowing it.
                 </p>
               </div>
 
@@ -280,13 +280,13 @@ export default function PlaybookPage() {
                   ))}
                   <div className="pb-results-row" style={{ background: 'rgba(232,255,0,0.04)', borderBottom: 'none' }}>
                     <span style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', fontSize: '0.875rem', color: '#f0f0f0', fontWeight: 700 }}>TOTAL</span>
-                    <span style={{ fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif", fontSize: '1.75rem', color: '#e8ff00' }}>22</span>
-                    <span style={{ fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif", fontSize: '1.75rem', color: '#e8ff00' }}>$200</span>
-                    <span style={{ fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif", fontSize: '1.75rem', color: '#e8ff00' }}>~$9</span>
+                    <span style={{ fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif", fontSize: '1.75rem', color: '#e8ff00' }}>27</span>
+                    <span style={{ fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif", fontSize: '1.75rem', color: '#e8ff00' }}>£200</span>
+                    <span style={{ fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif", fontSize: '1.75rem', color: '#e8ff00' }}>£7.25</span>
                   </div>
                 </div>
                 <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#555555', fontSize: '1rem', lineHeight: 1.8, margin: '0 0 16px 0' }}>
-                  Of those 22 leads, 6 became paying clients in the first month. If each client is worth $80/month and stays for 6 months on average — $80 × 6 × 6 = <strong style={{ color: '#f0f0f0' }}>$2,880 in revenue from a $200 ad spend. A 14× return.</strong>
+                  Of those 27 leads, 6 became paying clients in month one. Cleaning services recurring at £80/month. 6 clients × £80 × 6 months = <strong style={{ color: '#f0f0f0' }}>£2,880 in revenue from a £200 ad spend. A 14× return in 6 months — from a single campaign.</strong>
                 </p>
                 <div className="pb-callout">
                   <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.15em', color: '#e8ff00', textTransform: 'uppercase', margin: '0 0 8px 0' }}>THE LESSON</p>
@@ -334,7 +334,7 @@ export default function PlaybookPage() {
                   <span style={{ color: '#e8ff00', display: 'block' }}>this for you?</span>
                 </h2>
                 <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#555555', fontSize: '1rem', lineHeight: 1.75, maxWidth: '520px', margin: '0 auto 40px auto' }}>
-                  The same methodology. Applied to your business. Guaranteed to deliver more leads and more revenue within 90 days — or we work for free until we do. We&apos;re taking 4 founding clients.
+                  The same methodology. Applied to your business. Guaranteed to deliver more leads and more revenue within 90 days — or we work for free until we do. 2 founding spots remaining.
                 </p>
                 <button
                   type="button"
