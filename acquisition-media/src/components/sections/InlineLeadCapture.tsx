@@ -85,7 +85,7 @@ export default function InlineLeadCapture() {
             textTransform: 'uppercase',
             margin: '0 0 12px 0',
           }}>
-            FREE — THE ACQUISITION ENGINE PLAYBOOK
+            FREE — £7.25 CPL CASE STUDY + FULL ACQUISITION PLAYBOOK
           </p>
           <h2 style={{
             fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif",
@@ -93,8 +93,8 @@ export default function InlineLeadCapture() {
             lineHeight: 1.0,
             margin: '0 0 12px 0',
           }}>
-            <span style={{ color: '#f0f0f0', display: 'block' }}>Growing a business is hard.</span>
-            <span style={{ color: '#e8ff00', display: 'block' }}>We make it a whole lot easier.</span>
+            <span style={{ color: '#e8ff00', display: 'block' }}>27 leads. £200. 30 days.</span>
+            <span style={{ color: '#f0f0f0', display: 'block' }}>Here&apos;s exactly how it happened.</span>
           </h2>
           <p style={{
             fontFamily: 'var(--font-inter), Inter, sans-serif',
@@ -103,7 +103,7 @@ export default function InlineLeadCapture() {
             lineHeight: 1.65,
             margin: 0,
           }}>
-            More predictable. Less guessing. More clients, less stress. Get the exact paid acquisition playbook we use for every client — platform decisions, campaign architecture, tracking setup, UK benchmarks, and the full £7.25 CPL case study. All of it, free.
+            The complete paid acquisition system — platform decisions, campaign architecture, conversion tracking setup, UK benchmark CPL table, and the full £7.25 CPL case study. Every decision explained. Yours free.
           </p>
         </div>
 

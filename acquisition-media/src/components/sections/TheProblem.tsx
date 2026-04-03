@@ -36,7 +36,7 @@ const PAIN_POINTS: PainPoint[] = [
     number: '04',
     title: "EVERY POUND YOU'VE SPENT ON MARKETING FELT LIKE A GAMBLE.",
     description:
-      "You have tried something — ads, a website, maybe an agency. The money left. The uncertainty stayed. You have no idea which action drove the leads you did get, which means you cannot repeat it. That is not a marketing problem. That is a measurement problem.",
+      "You have tried something — ads, a website, maybe an agency. The money left. The uncertainty stayed. You have no idea which action drove the leads you did get, which means you cannot repeat it. That is not a marketing problem. That is a measurement problem — and it is exactly the problem we fix first, before you spend a single pound.",
   },
 ]
 

@@ -64,59 +64,59 @@ const monthlyStack = [
 const bonuses = [
   {
     num: '①',
-    name: 'The 48-Hour Launch Watch',
-    solves: 'The fear: nothing happens when we go live.',
-    body: "For the first 48 hours your campaigns are live, Anas monitors every signal — every ad, every bid, every conversion event — morning and evening. Not automated alerts. Not a dashboard someone checks weekly. The person who built it, watching it run in real time. Problems caught in hours, not discovered at the monthly review. No agency carrying 50+ accounts can do this. With 4 clients, we always can.",
+    name: 'The 48-Hour Command Centre',
+    solves: 'Eliminates: "What if nothing happens when we go live?"',
+    body: "When your campaigns launch, Anas personally monitors every signal for the first 48 hours. CPL in real time. Bid strategy adjustments as data arrives. Conversion event verification. Creative performance by placement. Ad delivery pacing. Not automated alerts forwarded to a junior. The person who built your campaign, watching it run, making live adjustments the moment data starts moving. A problem caught in hour 2 doesn't cost you £800. A problem caught at the monthly review might cost you £4,000. This level of launch attention is physically impossible when you're managing 50+ accounts. With a maximum of 4 clients, it's standard.",
     value: '£2,500 market equivalent',
-    note: 'Active from campaign launch — first 48 hours',
+    note: 'Active from the moment campaigns go live',
   },
   {
     num: '②',
-    name: 'The Competitor Intelligence Report',
-    solves: "The fear: they'll just run the same ads as everyone else.",
-    body: "Before your first pound is spent, we reverse-engineer your top 3 local competitors — every live ad, every message angle, every platform they're active on. You enter the market knowing exactly what your audience has already seen and is bored of. You don't go live guessing. You go live knowing the gap. Most agencies never do this. We do it before we spend anything.",
+    name: 'The Video Ad Production Pack',
+    solves: 'Eliminates: "I don\'t know how to make an ad that stops the scroll."',
+    body: "We write a complete 30-second direct-response video script built specifically for your business, your target customer, and your service category — not a template with your name swapped in. The script is engineered around a single job: stop the scroll in 2 seconds, create desire in 20 seconds, remove friction in 8 seconds. Included: a shot-by-shot creative direction brief (what to film, in what order, what angles, what to say, what music works and what kills attention), a second hook variation to A/B test from day one, and a guide for filming on an iPhone that produces results indistinguishable from expensive production. You arrive on filming day. The strategy is done. The script is written. The direction is planned. Agencies charge £1,500+ for standalone video scripting. It arrives with your launch pack.",
+    value: '£1,500 market equivalent',
+    note: 'Delivered with your full launch pack',
+  },
+  {
+    num: '③',
+    name: 'The Competitor Intelligence Dossier',
+    solves: 'Eliminates: "What if they just run the same ads as everyone else?"',
+    body: "Seven days before your first ad runs, you receive a detailed intelligence report on your top 3 local competitors. Every live ad they're running across Google and Meta. The messaging angles they've already tested. The keywords they're bidding on and the specific gaps they're missing. The geographic areas they're neglecting. What their landing pages say. What their offers are. What they've abandoned — which usually means it didn't work. You enter the market knowing exactly what your audience has already seen and is bored of. You go live knowing the gap, not guessing at it. Most agencies never do this because it takes time. We do it because it determines the strategy for everything that follows.",
     value: '£1,800 market equivalent',
     note: 'Delivered 7 days before launch',
   },
   {
-    num: '③',
-    name: 'Your 90-Day Pipeline Blueprint',
-    solves: "The fear: I don't know if this is right for my business.",
-    body: "On the strategy call, we build your 90-day acquisition plan live — target CPL benchmarked for your niche and postcode, projected lead volume at each spend level, which channel to launch first, and the exact metrics that signal it's working. Written. Specific. Yours permanently — whether you become a client or not. No asterisks.",
-    value: '£1,200 value — yours free',
-    note: 'Built live on the strategy call — yours to keep',
+    num: '④',
+    name: 'The "Dead Money" Audit',
+    solves: 'Eliminates: "I\'ve tried ads before and wasted money. What\'s different?"',
+    body: "If you've run any paid advertising previously — boosted posts, Google Express, a few hundred on Facebook — we do a forensic audit before we start. Every conversion event that fired or didn't fire. Every keyword that spent without converting. Every audience that burned budget without generating a qualified lead. A line-by-line breakdown of exactly where your money went and exactly why it didn't work. Then we explain what we're doing differently and why it produces a different result. The average business we audit has 4–7 fixable issues they don't know about. You'll know every one of them before we spend your first pound.",
+    value: '£1,800 market equivalent',
+    note: 'Completed before any spend — your baseline reset',
   },
   {
-    num: '④',
-    name: 'Lead Nurture Email Sequence',
-    solves: "The fear: leads come in but don't convert.",
-    body: "Most leads that don't book on day one are not lost — they're just undecided. We write a 5-email nurture sequence for your business: follow-up, objection handling, social proof, urgency, and close. Sent automatically to every enquiry who doesn't book within 48 hours. Agencies charge £2,400+ for standalone email copywriting. It's included.",
+    num: '⑤',
+    name: 'The Lead Nurture Machine (5-Email Sequence)',
+    solves: 'Eliminates: "Leads come in, then disappear without booking."',
+    body: "Most leads that don't convert on day one are not lost — they're undecided. Undecided leads choose whoever follows up first, most persistently, most credibly. Without a follow-up system, that's your competitor. We write and set up a 5-part automated email sequence for your business: same-hour arrival email, credibility builder with social proof, objection-handling email addressing the top 3 reasons people hesitate, case study email with a real result, and an urgency close. Triggered automatically for every enquiry that doesn't book within 48 hours. Average open rate on properly built sequences: 45%+. Agencies charge £2,400+ for standalone email copywriting. Built before your launch date — included.",
     value: '£2,400 market equivalent',
     note: 'Written before launch — automated from day one',
   },
   {
-    num: '⑤',
-    name: 'Founding Rate — Locked Permanently',
-    solves: 'The fear: prices go up when we are dependent on them.',
-    body: "Standard clients pay market rate. Founding clients — the first 4 — pay 40% below that rate, locked forever. Not for the first year. Not subject to review. Permanently. As we grow, as demand increases, as our results warrant higher fees — your rate does not change. The only way to access this is to be one of the first 4. After that, the door closes.",
-    value: 'Priceless — no mechanism to recreate',
-    note: `Only ${SPOTS_REMAINING} of the 4 founding spots remain`,
-  },
-  {
     num: '⑥',
-    name: 'Google Business Profile Optimisation',
-    solves: 'The fear: we\'ll be invisible on Google Maps too.',
-    body: "We fully set up and optimise your Google Business Profile — keyword-rich description, complete category structure, photo strategy, Q&A seeding, and a review request system wired into your post-booking flow. Gets you into the local 3-pack for searches in your area without spending a penny on ads. Most local businesses have a half-finished profile that actively costs them ranking. We fix it before your first ad goes live.",
+    name: 'The Local Domination Package',
+    solves: 'Eliminates: "I\'m invisible on Google Maps while competitors get free traffic."',
+    body: "The fastest, cheapest leads in any local market come from Google Maps — and most businesses leave them on the table. Before your first paid ad goes live, we build your local organic presence: complete Google Business Profile optimisation (keyword-rich descriptions, full category structure, Q&A seeding with the exact questions your prospects search), photo strategy brief, and a post-booking review request system wired into your confirmation flow. The review system matters most: every client you close through paid ads feeds an automated flow that compounds your Maps ranking over time. Most local businesses have a 40% complete profile that actively costs them ranking. We fix it before any spend.",
     value: '£800 market equivalent',
-    note: 'Completed in week 1 — before launch',
+    note: 'Completed in week 1 — before any campaigns launch',
   },
   {
     num: '⑦',
-    name: 'Video Ad Script & Creative Direction Brief',
-    solves: 'The fear: I don\'t know how to make a video ad that converts.',
-    body: "We write a full 30-second direct-response video script for your business — hook, problem, social proof, offer, CTA. Plus a shot-by-shot creative direction brief: what to film, where, how long each clip, what to say on camera. You show up on the day of filming. The strategy, the script, the direction — already done. Standalone, agencies charge £1,500+ for this. It's yours before we launch.",
-    value: '£1,500 market equivalent',
-    note: 'Delivered with your launch pack',
+    name: 'The Permanent Rate Lock',
+    solves: 'Eliminates: "Prices will increase once I\'m dependent on them."',
+    body: "Every founding client receives one thing no standard client will ever access: their rate, permanently locked. Not locked for the first year. Not subject to annual review. Not revised when our results warrant higher fees — which they will. Permanently. The rate you agree on the day you sign is the rate you pay five years from now. Standard rates will increase. Founding rates do not. At a conservative 10% annual standard rate increase, this lock is worth over £60,000 in cumulative savings over 5 years — at current pricing. The mechanism to access this expires when the last founding spot is taken. After that, it is gone. There is no way to recreate it later.",
+    value: '£60,000+ lifetime savings equivalent',
+    note: `Only ${SPOTS_REMAINING} of 4 founding spots remain — then gone`,
   },
 ]
 
@@ -385,18 +385,18 @@ export default function GrandSlamOffer() {
           <div style={{ display: 'grid', gap: '2px', background: '#1a1a1a' }} className="gso-totals-grid">
             <div style={{ background: '#0d0d0d', padding: '20px 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '8px' }}>
               <span style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#555555', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' }}>Founding bonus value (7 bonuses)</span>
-              <span style={{ fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif", fontSize: '1.5rem', color: '#f0f0f0' }}>£10,200+ (+ priceless)</span>
+              <span style={{ fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif", fontSize: '1.5rem', color: '#f0f0f0' }}>£10,200+ cash (+ £60,000+ rate lock)</span>
             </div>
             <div style={{ background: '#060606', padding: '24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px', border: '1px solid #e8ff00' }}>
               <div>
                 <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#e8ff00', fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', margin: '0 0 4px 0' }}>
-                  TOTAL YEAR 1 EQUIVALENT VALUE
+                  TOTAL EQUIVALENT VALUE (YEAR 1 SERVICES + BONUSES + RATE LOCK)
                 </p>
                 <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#555555', fontSize: '0.8125rem', fontStyle: 'italic', margin: 0 }}>
-                  Founding clients access this at 40% below standard market rate — permanently locked.
+                  Founding clients access everything at 40% below standard rate — permanently. Standard clients pay market rate from day one.
                 </p>
               </div>
-              <span style={{ fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif", fontSize: 'clamp(2rem, 4vw, 3rem)', color: '#e8ff00', flexShrink: 0 }}>£96,200+</span>
+              <span style={{ fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif", fontSize: 'clamp(2rem, 4vw, 3rem)', color: '#e8ff00', flexShrink: 0 }}>£156,200+</span>
             </div>
           </div>
         </div>
@@ -407,7 +407,7 @@ export default function GrandSlamOffer() {
         @media (min-width: 768px) {
           .gso-middle { grid-template-columns: 1.5fr 1fr !important; }
           .gso-bonus-grid { grid-template-columns: repeat(3, 1fr) !important; }
-          /* 5th bonus spans full row on its own - actually let's do 3+2 natural flow */
+          .gso-bonus-grid .gso-bonus:last-child { grid-column: 1 / -1 !important; }
           .gso-totals-grid { grid-template-columns: 1fr 1fr !important; }
         }
       `}</style>

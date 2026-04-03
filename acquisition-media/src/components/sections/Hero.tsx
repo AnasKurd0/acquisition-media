@@ -300,7 +300,7 @@ export default function Hero() {
             opacity: 0,
           }}
         >
-          {['✓ Google + Meta Ads', '✓ Custom Website', '✓ 5 Written Guarantees', '✓ 7 Founding Bonuses', '✓ Max 4 Clients — Never Line 83'].map((item) => (
+          {['✓ Google + Meta Ads', '✓ Custom Website', '✓ 5 Written Guarantees', '✓ 7 Founding Bonuses', '✓ Max 4 Clients — 40× More Attention'].map((item) => (
             <span
               key={item}
               style={{

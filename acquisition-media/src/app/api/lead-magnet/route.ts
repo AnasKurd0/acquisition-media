@@ -1,15 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-// To activate:
-// 1. Sign up at https://resend.com (free — 3,000 emails/month)
-// 2. Add a verified sending domain (or use onboarding@resend.dev for testing)
-// 3. Add to .env.local:
-//    RESEND_API_KEY=re_xxxxxxxxxxxx
-//    RESEND_FROM=Acquisition Media <hello@yourdomain.com>
-// 4. Upload your playbook PDF somewhere (Google Drive, Notion, S3, etc.)
-//    and replace PLAYBOOK_URL below with the public link
-
 const PLAYBOOK_URL = process.env.NEXT_PUBLIC_PLAYBOOK_URL ?? '#'
+
+async function sendEmail(apiKey: string, from: string, to: string, subject: string, html: string) {
+  const res = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
+    body: JSON.stringify({ from, to, subject, html }),
+  })
+  return res
+}
 
 export async function POST(request: NextRequest) {
   let body: { firstName?: string; email?: string; industry?: string }
@@ -23,17 +23,18 @@ export async function POST(request: NextRequest) {
   if (!email?.trim()) {
     return NextResponse.json({ error: 'Email is required' }, { status: 400 })
   }
-  // firstName is optional — used in email greeting if provided
   const name = firstName?.trim() || 'there'
 
   const apiKey = process.env.RESEND_API_KEY
-  const from = process.env.RESEND_FROM ?? 'Acquisition Media <onboarding@resend.dev>'
+  const customFrom = process.env.RESEND_FROM
+  const fallbackFrom = 'Acquisition Media <onboarding@resend.dev>'
 
   if (!apiKey) {
-    // Dev fallback — log the lead, return success so UX still works
-    console.log(`[LeadMagnet] Lead captured (no RESEND_API_KEY): ${email} — ${name}`)
+    console.log(`[LeadMagnet] Lead captured (no RESEND_API_KEY): ${email}`)
     return NextResponse.json({ ok: true })
   }
+
+  const subject = "The Acquisition Engine Playbook — yours now"
 
   const html = `<!DOCTYPE html>
 <html>
@@ -50,28 +51,29 @@ export async function POST(request: NextRequest) {
       COMPLETE PLAYBOOK
     </h2>
     <p style="font-family:Inter,Arial,sans-serif;font-size:11px;color:#555555;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;margin:0 0 40px 0;">
-      PLATFORM DECISION · CAMPAIGN ARCHITECTURE · TRACKING · BENCHMARKS · CASE STUDY · AGENCY AUDIT
+      PLATFORM DECISION · CAMPAIGN ARCHITECTURE · TRACKING · UK BENCHMARKS · CASE STUDY · AGENCY AUDIT
     </p>
 
     <p style="font-size:16px;line-height:1.7;color:#f0f0f0;margin:0 0 12px 0;">
       Hi ${name},
     </p>
     <p style="font-size:15px;line-height:1.75;color:#555555;margin:0 0 16px 0;">
-      Here is the complete paid acquisition system we use for every client — the frameworks, the numbers, the decisions, the benchmarks. Six sections. Everything.
+      Here is the complete paid acquisition system we use for every client. Not a PDF with stock photos and generic advice — the actual thinking, the actual decisions, the actual numbers.
     </p>
     <p style="font-size:15px;line-height:1.75;color:#555555;margin:0 0 40px 0;">
-      This is not an ebook with stock photos and vague advice. This is the actual thinking behind the 27 leads, £200 spend, £7.25 CPL campaign. Read it. Then decide if you want us to run it for you.
+      Seven sections. Platform decision framework, campaign architecture, full tracking setup, UK benchmark CPL data, the £7.25 case study in full detail, 10-question agency audit, and 6 warning signs. Read it in one sitting. Then decide if you want us to run it for you.
     </p>
 
     <div style="background:#0d0d0d;border:1px solid #1a1a1a;padding:28px 32px;margin:0 0 40px 0;">
       <p style="font-size:11px;font-weight:700;color:#e8ff00;letter-spacing:0.2em;text-transform:uppercase;margin:0 0 20px 0;">WHAT'S INSIDE:</p>
       <table style="width:100%;border-collapse:collapse;">
-        <tr><td style="padding:8px 0;border-bottom:1px solid #1a1a1a;font-size:13px;color:#555555;"><span style="color:#e8ff00;margin-right:12px;">01</span>Platform Decision — Google vs Meta vs TikTok for your specific niche</td></tr>
-        <tr><td style="padding:8px 0;border-bottom:1px solid #1a1a1a;font-size:13px;color:#555555;"><span style="color:#e8ff00;margin-right:12px;">02</span>Campaign Architecture — the structure that scales</td></tr>
-        <tr><td style="padding:8px 0;border-bottom:1px solid #1a1a1a;font-size:13px;color:#555555;"><span style="color:#e8ff00;margin-right:12px;">03</span>Conversion Tracking — how to trace every lead to its exact source</td></tr>
-        <tr><td style="padding:8px 0;border-bottom:1px solid #1a1a1a;font-size:13px;color:#555555;"><span style="color:#e8ff00;margin-right:12px;">04</span>48-Hour Health Check — UK benchmark CPL table by industry</td></tr>
-        <tr><td style="padding:8px 0;border-bottom:1px solid #1a1a1a;font-size:13px;color:#555555;"><span style="color:#e8ff00;margin-right:12px;">05</span>The Case Study — 27 leads, £200 spend, £7.25 CPL. Every detail.</td></tr>
-        <tr><td style="padding:8px 0;font-size:13px;color:#555555;"><span style="color:#e8ff00;margin-right:12px;">06</span>10-Question Agency Audit — use it to evaluate any agency (including us)</td></tr>
+        <tr><td style="padding:8px 0;border-bottom:1px solid #1a1a1a;font-size:13px;color:#555555;"><span style="color:#e8ff00;margin-right:12px;">01</span>Platform Decision Framework — Google vs Meta vs TikTok for your niche</td></tr>
+        <tr><td style="padding:8px 0;border-bottom:1px solid #1a1a1a;font-size:13px;color:#555555;"><span style="color:#e8ff00;margin-right:12px;">02</span>Campaign Architecture — the 5-step system that generates leads in 48 hours</td></tr>
+        <tr><td style="padding:8px 0;border-bottom:1px solid #1a1a1a;font-size:13px;color:#555555;"><span style="color:#e8ff00;margin-right:12px;">03</span>Conversion Tracking Setup — the setup that makes £7 CPL possible</td></tr>
+        <tr><td style="padding:8px 0;border-bottom:1px solid #1a1a1a;font-size:13px;color:#555555;"><span style="color:#e8ff00;margin-right:12px;">04</span>UK Benchmark CPL Table — 10 industries, what good/average/bad actually looks like</td></tr>
+        <tr><td style="padding:8px 0;border-bottom:1px solid #1a1a1a;font-size:13px;color:#555555;"><span style="color:#e8ff00;margin-right:12px;">05</span>The £7.25 Case Study — 27 leads, £200, every decision explained</td></tr>
+        <tr><td style="padding:8px 0;border-bottom:1px solid #1a1a1a;font-size:13px;color:#555555;"><span style="color:#e8ff00;margin-right:12px;">06</span>10-Question Agency Audit — good answer vs bad answer, side by side</td></tr>
+        <tr><td style="padding:8px 0;font-size:13px;color:#555555;"><span style="color:#e8ff00;margin-right:12px;">07</span>6 Warning Signs your agency isn't doing their job</td></tr>
       </table>
     </div>
 
@@ -79,23 +81,25 @@ export async function POST(request: NextRequest) {
       ACCESS YOUR PLAYBOOK →
     </a>
 
-    <p style="font-size:12px;color:#333333;margin:48px 0 0 0;font-style:italic;line-height:1.6;">
+    <p style="font-size:12px;color:#333333;margin:48px 0 0 0;line-height:1.6;">
       One email. No sequences. No spam. Ever.<br>
-      — Acquisition Media
+      — Anas, Acquisition Media
     </p>
   </div>
 </body>
 </html>`
 
   try {
-    const res = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${apiKey}`,
-      },
-      body: JSON.stringify({ from, to: email.trim(), subject: "The Acquisition Engine Playbook — yours now", html }),
-    })
+    // Try with custom from address first
+    const fromAddress = customFrom ?? fallbackFrom
+    let res = await sendEmail(apiKey, fromAddress, email.trim(), subject, html)
+
+    // If custom domain isn't verified, fall back to Resend's test domain
+    if (!res.ok && customFrom && customFrom !== fallbackFrom) {
+      const errorText = await res.text()
+      console.warn('[LeadMagnet] Custom from failed, falling back to onboarding@resend.dev. Error:', errorText)
+      res = await sendEmail(apiKey, fallbackFrom, email.trim(), subject, html)
+    }
 
     if (!res.ok) {
       const err = await res.text()
@@ -103,6 +107,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Send failed' }, { status: 500 })
     }
 
+    console.log(`[LeadMagnet] Email sent to: ${email}`)
     return NextResponse.json({ ok: true })
   } catch (err) {
     console.error('[LeadMagnet] Unexpected error:', err)

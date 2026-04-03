@@ -60,15 +60,23 @@ export default function VSLSection() {
         {/* Pre-headline */}
         <div style={{ textAlign: 'center', marginBottom: '40px' }}>
           <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', fontSize: '0.6875rem', fontWeight: 700, letterSpacing: '0.2em', color: '#e8ff00', textTransform: 'uppercase', margin: '0 0 16px 0' }}>
-            WATCH THIS FIRST — 4 MINUTES
+            WATCH BEFORE YOU DO ANYTHING ELSE — 8 MINUTES
           </p>
-          <h2 style={{ fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif", fontSize: 'clamp(32px, 5vw, 64px)', lineHeight: 1.05, margin: '0 0 16px 0' }}>
-            <span style={{ color: '#f0f0f0', display: 'block' }}>Why most ad spend is wasted.</span>
-            <span style={{ color: '#e8ff00', display: 'block' }}>And exactly how to fix it.</span>
+          <h2 style={{ fontFamily: "var(--font-bebas), 'Bebas Neue', sans-serif", fontSize: 'clamp(32px, 5vw, 72px)', lineHeight: 1.0, margin: '0 0 16px 0' }}>
+            <span style={{ color: '#f0f0f0', display: 'block' }}>The reason your marketing</span>
+            <span style={{ color: '#f0f0f0', display: 'block' }}>isn&apos;t working has nothing</span>
+            <span style={{ color: '#e8ff00', display: 'block' }}>to do with your budget.</span>
           </h2>
-          <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#555555', fontSize: '0.9375rem', lineHeight: 1.7, maxWidth: '560px', margin: '0 auto' }}>
-            Anas walks through the exact methodology behind the 27-lead, £200-spend campaign — and why most agencies structurally cannot replicate it.
+          <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#555555', fontSize: '1rem', lineHeight: 1.75, maxWidth: '600px', margin: '0 auto 20px auto' }}>
+            Anas breaks down the structural reason 90% of small business ad spend produces nothing — and walks through the exact methodology that generated 27 qualified leads for £200. Platform decisions. Campaign architecture. Conversion tracking. The agency audit. Every decision, explained.
           </p>
+          <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '12px' }}>
+            {['The £7.25 CPL breakdown', 'Why tracking changes everything', 'How to audit your agency in 10 questions', 'The platform decision framework'].map((tag) => (
+              <span key={tag} style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#333333', fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.04em', border: '1px solid #1a1a1a', padding: '4px 10px' }}>
+                {tag}
+              </span>
+            ))}
+          </div>
         </div>
 
         {/* Video container */}
