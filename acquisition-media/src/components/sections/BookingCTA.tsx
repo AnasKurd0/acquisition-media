@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { openCalendly } from '@/lib/calendly'
-import { SPOTS_REMAINING } from '@/data/spots'
+import { SPOTS_REMAINING, SPOTS_TOTAL } from '@/data/spots'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -82,7 +82,7 @@ export default function BookingCTA() {
             letterSpacing: '0.2em',
             fontFamily: 'var(--font-inter), Inter, sans-serif',
           }}>
-            FREE — {SPOTS_REMAINING} FOUNDING SPOTS REMAINING
+            FREE — {SPOTS_REMAINING} OF {SPOTS_TOTAL} FOUNDING SPOTS REMAINING
           </span>
         </div>
 

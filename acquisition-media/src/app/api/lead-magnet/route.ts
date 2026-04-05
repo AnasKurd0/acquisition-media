@@ -1,15 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-const PLAYBOOK_URL = process.env.NEXT_PUBLIC_PLAYBOOK_URL ?? '#'
-
-async function sendEmail(apiKey: string, from: string, to: string, subject: string, html: string) {
-  const res = await fetch('https://api.resend.com/emails', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
-    body: JSON.stringify({ from, to, subject, html }),
-  })
-  return res
-}
+const PLAYBOOK_URL = process.env.NEXT_PUBLIC_PLAYBOOK_URL ?? 'https://acquisitionmedia.co.uk/playbook'
 
 export async function POST(request: NextRequest) {
   let body: { firstName?: string; email?: string; industry?: string }
@@ -26,9 +17,6 @@ export async function POST(request: NextRequest) {
   const name = firstName?.trim() || 'there'
 
   const apiKey = process.env.RESEND_API_KEY
-  const customFrom = process.env.RESEND_FROM
-  const fallbackFrom = 'Acquisition Media <onboarding@resend.dev>'
-
   if (!apiKey) {
     console.log(`[LeadMagnet] Lead captured (no RESEND_API_KEY): ${email}`)
     return NextResponse.json({ ok: true })
@@ -72,7 +60,7 @@ export async function POST(request: NextRequest) {
         <tr><td style="padding:8px 0;border-bottom:1px solid #1a1a1a;font-size:13px;color:#555555;"><span style="color:#e8ff00;margin-right:12px;">03</span>Conversion Tracking Setup — the setup that makes £7 CPL possible</td></tr>
         <tr><td style="padding:8px 0;border-bottom:1px solid #1a1a1a;font-size:13px;color:#555555;"><span style="color:#e8ff00;margin-right:12px;">04</span>UK Benchmark CPL Table — 10 industries, what good/average/bad actually looks like</td></tr>
         <tr><td style="padding:8px 0;border-bottom:1px solid #1a1a1a;font-size:13px;color:#555555;"><span style="color:#e8ff00;margin-right:12px;">05</span>The £7.25 Case Study — 27 leads, £200, every decision explained</td></tr>
-        <tr><td style="padding:8px 0;border-bottom:1px solid #1a1a1a;font-size:13px;color:#555555;"><span style="color:#e8ff00;margin-right:12px;">06</span>10-Question Agency Audit — good answer vs bad answer, side by side</td></tr>
+        <tr><td style="padding:8px 0;border-bottom:1px solid #1a1a1a;font-size:13px;color:#555555;"><span style="color:#e8ff00;margin-right:12px;">06</span>10-Question Agency Audit (good answer vs bad answer, side by side)</td></tr>
         <tr><td style="padding:8px 0;font-size:13px;color:#555555;"><span style="color:#e8ff00;margin-right:12px;">07</span>6 Warning Signs your agency isn't doing their job</td></tr>
       </table>
     </div>
@@ -89,28 +77,38 @@ export async function POST(request: NextRequest) {
 </body>
 </html>`
 
-  try {
-    // Try with custom from address first
-    const fromAddress = customFrom ?? fallbackFrom
-    let res = await sendEmail(apiKey, fromAddress, email.trim(), subject, html)
+  // Try senders in order of preference. Always return success to frontend
+  // so the form never shows an error — log failures for debugging.
+  const senders = [
+    process.env.RESEND_FROM,
+    'Acquisition Media <onboarding@resend.dev>',
+  ].filter(Boolean) as string[]
 
-    // If custom domain isn't verified, fall back to Resend's test domain
-    if (!res.ok && customFrom && customFrom !== fallbackFrom) {
-      const errorText = await res.text()
-      console.warn('[LeadMagnet] Custom from failed, falling back to onboarding@resend.dev. Error:', errorText)
-      res = await sendEmail(apiKey, fallbackFrom, email.trim(), subject, html)
+  // Deduplicate in case RESEND_FROM is already the fallback
+  const uniqueSenders = [...new Set(senders)]
+
+  for (const from of uniqueSenders) {
+    try {
+      const res = await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
+        body: JSON.stringify({ from, to: email.trim(), subject, html }),
+      })
+
+      if (res.ok) {
+        console.log(`[LeadMagnet] Email sent to ${email} via ${from}`)
+        return NextResponse.json({ ok: true })
+      }
+
+      const errText = await res.text()
+      console.warn(`[LeadMagnet] Failed with sender "${from}": ${errText}`)
+    } catch (err) {
+      console.warn(`[LeadMagnet] Exception with sender "${from}":`, err)
     }
-
-    if (!res.ok) {
-      const err = await res.text()
-      console.error('[LeadMagnet] Resend error:', err)
-      return NextResponse.json({ error: 'Send failed' }, { status: 500 })
-    }
-
-    console.log(`[LeadMagnet] Email sent to: ${email}`)
-    return NextResponse.json({ ok: true })
-  } catch (err) {
-    console.error('[LeadMagnet] Unexpected error:', err)
-    return NextResponse.json({ error: 'Server error' }, { status: 500 })
   }
+
+  // All senders failed — log the lead but still return success to the user
+  // so the form doesn't show an error. Check Resend dashboard / logs for delivery issues.
+  console.error(`[LeadMagnet] All senders failed for ${email}. Check domain verification in Resend dashboard.`)
+  return NextResponse.json({ ok: true })
 }

@@ -6,7 +6,7 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { openCalendly } from '@/lib/calendly'
-import { SPOTS_REMAINING } from '@/data/spots'
+import { SPOTS_REMAINING, SPOTS_TOTAL } from '@/data/spots'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -150,7 +150,7 @@ export default function Hero() {
             opacity: 0,
           }}
         >
-          ★ {SPOTS_REMAINING} FOUNDING SPOTS REMAINING
+          ★ {SPOTS_REMAINING} OF {SPOTS_TOTAL} FOUNDING SPOTS REMAINING
         </div>
 
         {/* Headlines */}
@@ -237,7 +237,7 @@ export default function Hero() {
             Custom website · Google Ads · Meta Ads · Conversion tracking · Weekly reports · Direct founder access · 5 written guarantees · 7 founding bonuses · Month-to-month after 90 days
           </p>
           <p style={{ fontFamily: 'var(--font-inter), Inter, sans-serif', color: '#e8ff00', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.08em', margin: 0 }}>
-            ★ {SPOTS_REMAINING} founding spots: permanently 40% below market rate + 7 exclusive bonuses
+            ★ {SPOTS_REMAINING} of {SPOTS_TOTAL} founding spots: permanently 40% below market rate + 7 exclusive bonuses
           </p>
         </div>
 

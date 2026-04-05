@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { openCalendly } from '@/lib/calendly';
+import { SPOTS_REMAINING } from '@/data/spots';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -430,7 +431,7 @@ export default function Guarantee() {
               lineHeight: 1.6,
             }}
           >
-            We only take {`${2}`} more founding clients. That&rsquo;s not a sales tactic.
+            We only take {SPOTS_REMAINING} more founding clients. That&rsquo;s not a sales tactic.
             It&rsquo;s precisely how we can guarantee the outcome — fewer clients means more control over each one.
           </p>
 
